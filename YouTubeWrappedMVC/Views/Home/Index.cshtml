@@ -2,7 +2,29 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="home-body-wrapper">
+    <!-- Slider main container -->
+    <div class="swiper-container home-swiper-container">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide home-slide slide-1">
+                <p>Slide 1</p>
+            </div>
+            <div class="swiper-slide home-slide slide-2">
+                <p>Slide 2</p>
+            </div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+
 </div>
+
+<script>
+    var mySwiper = new Swiper('.swiper-container', {
+        direction: 'vertical',
+        slidesPerView: 1,
+        parallax: true,
+    });
+</script>

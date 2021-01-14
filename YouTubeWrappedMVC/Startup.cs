@@ -26,6 +26,7 @@ namespace YouTubeWrappedMVC
         {
             services.AddControllersWithViews();
             services.AddSingleton<TaskQueue>();
+            services.AddControllersWithViews().AddRazorRuntimeCompilation();
 
         }
 
