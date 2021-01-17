@@ -9,31 +9,57 @@
                     <img src="https://s2.r29static.com/bin/entry/059/x,80/2246859/image.jpg" alt="">
                 </div>*@
             <div class="carousel_slide">
-                <div class="home-greeting-heading">
+                <div class="home-greeting-heading animated slide-in-left">
                     <i class="fab fa-youtube youtube-icon"></i>
                     <span>YouTube Wrapped</span>
                 </div>
-                <div class="home-greeting-body">
+                <div class="home-greeting-body animated slide-in-right delayed ms500">
                     <p>Get a detailed interactive breakdown of your recent YouTube viewing habits!</p>
-                    <p>Please note that in order to do this, we need your Google Takeout file containing your YouTube data. All data used by
-                    this app is recorded to be used again. However, please note that this stored data does not have any links to you or your personal information
-                    and is used only to make the processing of future data faster. No further data is obtained about you than the data in your Takeout file
-                    which is human-readable, so it is recommended that you read through this data before submitting it on this site.</p>
+                    <p>
+                        Please note that in order to do this, we need your Google Takeout file containing your YouTube data. All data used by
+                        this app is recorded to be used again. However, please note that this stored data does not have any links to you or your personal information
+                        and is used only to make the processing of future data faster. No further data is obtained about you than the data in your Takeout file
+                        which is human-readable, so it is recommended that you read through this data before submitting it on this site.
+                    </p>
                     <p>If you have read through all of this and are happy to continue, let's go!</p>
                 </div>
-                
-                <div class="greeting-proceed-wrapper">
+                <div class="greeting-proceed-wrapper bottom">
+                    <div class="flex-vertical-spacer"></div>
                     <span class="proceed-text">Proceed</span>
                     <span class="proceed-arrow"></span>
                 </div>
             </div>
             <div class="carousel_slide">
-                
+                <div class="greeting-proceed-wrapper top">
+                    <span class="back-arrow"></span>
+                    <span class="back-text">Back</span>
+                </div>
+                <div class="home-upload-heading animated slide-in-left">
+                    <i class="fas fa-file-upload upload-icon"></i>
+                    <span>Upload Google Takeout</span>
+                </div>
+                <div class="home-upload-body">
+                    <p class="animated slide-in-right delayed ms500">
+                        As mentioned above, in order to process your YouTube data, we need you to upload your Google Takeout
+                        data, if you don't know how to do this, click here. Your email address will be used to notify you when your
+                        data is ready to be viewed.
+                    </p>
+                    <form action="/" method="post" class="home-upload-form animated slide-up delayed ms700">
+                        <input type="email" name="email" placeholder="Please enter your email address..." class="input-control" />
+                        <div class="file-input-wrapper">
+                            <div class="file-input-container">
+                                <input type="file" name="file" id="file" class="file-input" accept=".json"/>
+                                <label for="file" class="file-input-label waiting"><i class="fas fa-file-upload label-upload-icon"></i>Upload Takeout file (.json)</label>
+                                <label for="file" class="file-input-label selected"><i class="fas fa-check label-check-icon"></i>File selected</label>
+                            </div>
+                        </div>
+                        <div class="form-proceed-button-wrapper">
+                            <button class="proceed-text form-submit-button">Submit</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
-        @*<div class="next-button-container">
-            <button class="carousel-next">Next</button>
-        </div>*@
     </div>
 </div>
 
@@ -46,8 +72,57 @@
             slidesToShow: 1,
             arrows: true,
             nextArrow: $('.proceed-text'),
-            prevArrow: $(''),
-            vertical: true
+            prevArrow: $('.back-text'),
+            vertical: true,
+            verticalSwiping: false,
+            adaptiveHeight: true
+        }).on("beforeChange", function (event, slick, currentSlide, nextSlide) {
+            restartAnimations(nextSlide);
+        }).on('setPosition', function (event, slick) {
+            slick.$slides.css('height', slick.$slideTrack.height() + 'px');
         });
+
+        fixHeights();
+        setupCustomFileInput();
     });
+
+    function fixHeights() {
+        // Calculate the heighest slide and set a top/bottom margin for other children.
+        // As variableHeight is not supported yet: https://github.com/kenwheeler/slick/issues/1803
+        var maxHeight = -1;
+        $('.slick-slide').each(function () {
+            if ($(this).height() > maxHeight) {
+                maxHeight = $(this).height();
+            }
+        });
+
+        var firstProceedDiv = $('.greeting-proceed-wrapper.bottom')[0];
+        var heightDifference = maxHeight - $($('.slick-slide')[0]).height();
+        $(firstProceedDiv).css('margin-top', heightDifference + 'px');
+    }
+
+
+    function restartAnimations(nextSlide) {
+        var animatedElements = $('[data-slick-index=' + nextSlide + ']').find('.animated');
+        $(animatedElements).removeClass('animated').width();
+
+        $(animatedElements).addClass('animated');
+    }
+
+    function setupCustomFileInput() {
+        var inputs = document.querySelectorAll('.file-input');
+        Array.prototype.forEach.call(inputs, function (input) {
+            input.addEventListener('change', function (e) {
+                console.log("Files", this.files);
+                if (this.files.length == 1) {
+                    $('.file-input-label.waiting').hide();
+                    $('.file-input-label.selected').show();
+                } else {
+                    $('.file-input-label.waiting').show();
+                    $('.file-input-label.selected').hide();
+                }
+            });
+        });
+    }
+
 </script>
