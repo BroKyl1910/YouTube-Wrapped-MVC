@@ -2,11 +2,12 @@
 for details on configuring this project to bundle and minify static web assets. */
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
 
 * {
     font-family: Roboto, Arial, sans-serif;
     color: white;
+    font-weight: 300;
 }
 
 html, body, .pb-3 {
@@ -28,15 +29,9 @@ html {
 }
 
 .header-wrapper {
-    /*display: inline-block;*/
     background: rgb(30,30,30);
     padding: 20px;
-    /*border-radius: 10px;*/
-    /*margin: 30px;*/
     box-shadow: 2px 2px 2px rgba(0,0,0,0.3);
-    /*     -webkit-animation: glow 5s ease-in-out infinite alternate;
-    -moz-animation: glow 5s ease-in-out infinite alternate;
-    animation: glow 5s ease-in-out infinite alternate; */
 }
 
     .header-wrapper .youtube-icon {
@@ -63,6 +58,7 @@ html {
 
 .slick-wrapper {
     width: 60%;
+    /*height: 500px;*/
     margin: auto;
     box-shadow: 5px 5px 5px rgba(0,0,0,0.2);
     border-radius: 10px;
@@ -90,6 +86,23 @@ html {
         box-shadow: 5px 5px 5px rgba(0,0,0,0.2);
     }
 
+.home-greeting-heading {
+    border-bottom: 3px solid rgba(255,255,255,0.7);
+    animation: slide-in-left 0.4s ease;
+}
+
+    .home-greeting-heading * {
+        font-family: 'Roboto Condensed';
+        font-size: 70px;
+        vertical-align: middle;
+        text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    }
+
+    .home-greeting-heading .youtube-icon {
+        color: red;
+        font-size: 80px;
+    }
+
 .next-button-container {
     display: flex;
     flex-direction: row-reverse;
@@ -112,3 +125,108 @@ html {
         .next-button-container .carousel-next:focus {
             outline: none;
         }
+
+.home-greeting-body p {
+    font-size: 20px;
+    color: rgba(255,255,255,0.7);
+    transform: translateX(150%);
+    animation: slide-in-right 0.4s ease;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+.greeting-proceed-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+    .greeting-proceed-wrapper .proceed-text {
+        font-size: 1.2em;
+        color: rgba(255,255,255,0.5);
+    }
+
+        .greeting-proceed-wrapper .proceed-text:hover {
+            color: rgba(255,255,255,1);
+            cursor: pointer;
+        }
+
+    .greeting-proceed-wrapper .proceed-arrow {
+        animation: arrow-bounce 3s infinite;
+    }
+
+        .greeting-proceed-wrapper .proceed-arrow::after {
+            content: " ";
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-right: 2px solid white;
+            border-bottom: 2px solid white;
+            transform: rotate(45deg);
+            animation: bounce-color 3s infinite;
+        }
+
+
+@keyframes slide-in-left {
+    0%{
+        transform: translateX(-100%);
+        opacity: 0;
+    } 
+
+    80%{
+        opacity: 0.5;
+    }
+
+    100%{
+        transform: translateX(0%);
+    }
+}
+
+@keyframes slide-in-right {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    80% {
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes arrow-bounce {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes bounce-color {
+    0% {
+        border-right-color: rgba(255,255,255,1);
+        border-bottom-color: rgba(255,255,255,1);
+    }
+
+    50% {
+        border-right-color: rgba(255,255,255,0.5);
+        border-bottom-color: rgba(255,255,255,0.5);
+    }
+
+    100% {
+        border-right-color: rgba(255,255,255,1);
+        border-bottom-color: rgba(255,255,255,1);
+    }
+}

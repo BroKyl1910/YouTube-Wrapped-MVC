@@ -5,19 +5,35 @@
 <div class="home-body-wrapper">
     <div class="slick-wrapper">
         <div class="slick">
+            @*<div class="carousel_slide">
+                    <img src="https://s2.r29static.com/bin/entry/059/x,80/2246859/image.jpg" alt="">
+                </div>*@
             <div class="carousel_slide">
-                <img src="https://s2.r29static.com/bin/entry/059/x,80/2246859/image.jpg" alt="">
+                <div class="home-greeting-heading">
+                    <i class="fab fa-youtube youtube-icon"></i>
+                    <span>YouTube Wrapped</span>
+                </div>
+                <div class="home-greeting-body">
+                    <p>Get a detailed interactive breakdown of your recent YouTube viewing habits!</p>
+                    <p>Please note that in order to do this, we need your Google Takeout file containing your YouTube data. All data used by
+                    this app is recorded to be used again. However, please note that this stored data does not have any links to you or your personal information
+                    and is used only to make the processing of future data faster. No further data is obtained about you than the data in your Takeout file
+                    which is human-readable, so it is recommended that you read through this data before submitting it on this site.</p>
+                    <p>If you have read through all of this and are happy to continue, let's go!</p>
+                </div>
+                
+                <div class="greeting-proceed-wrapper">
+                    <span class="proceed-text">Proceed</span>
+                    <span class="proceed-arrow"></span>
+                </div>
             </div>
             <div class="carousel_slide">
-                <img src="https://www.rollingstone.com/wp-content/uploads/2018/06/shawn-mendes-qa-13151316-0ef93af2-a8a4-4057-b8dc-bcfdc71abd9d.jpg?resize=1800,1200&w=1800" alt="">
-            </div>
-            <div class="carousel_slide">
-                <img src="https://assets.teenvogue.com/photos/5f58d4e14111b77a6cb7f808/4:3/w_3015,h_2261,c_limit/GettyImages-1228408822.jpg" alt="">
+                
             </div>
         </div>
-        <div class="next-button-container">
+        @*<div class="next-button-container">
             <button class="carousel-next">Next</button>
-        </div>
+        </div>*@
     </div>
 </div>
 
@@ -25,12 +41,13 @@
     $(document).ready(function () {
         $('.slick').slick({
             dots: false,
-            infinite: true,
+            infinite: false,
             speed: 300,
             slidesToShow: 1,
             arrows: true,
-            nextArrow: $('.carousel-next'),
+            nextArrow: $('.proceed-text'),
             prevArrow: $(''),
+            vertical: true
         });
     });
 </script>
