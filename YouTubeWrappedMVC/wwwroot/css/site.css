@@ -2,10 +2,11 @@
 for details on configuring this project to bundle and minify static web assets. */
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap');
 
 * {
-    font-family: 'Roboto', sans-serif;
+    font-family: Roboto, Arial, sans-serif;
+    color: white;
 }
 
 html, body, .pb-3 {
@@ -17,6 +18,7 @@ html, body, .pb-3 {
 -------------------------------------------------- */
 html {
     font-size: 14px;
+    background-color: rgb(10,10,10);
 }
 
 @media (min-width: 768px) {
@@ -25,41 +27,88 @@ html {
     }
 }
 
-/*body {
-    background-color: rgb(37,37,37);
-}*/
+.header-wrapper {
+    /*display: inline-block;*/
+    background: rgb(30,30,30);
+    padding: 20px;
+    /*border-radius: 10px;*/
+    /*margin: 30px;*/
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.3);
+    /*     -webkit-animation: glow 5s ease-in-out infinite alternate;
+    -moz-animation: glow 5s ease-in-out infinite alternate;
+    animation: glow 5s ease-in-out infinite alternate; */
+}
+
+    .header-wrapper .youtube-icon {
+        font-size: 1.6em;
+        margin: auto 0;
+        vertical-align: middle;
+        color: red;
+        text-shadow: 1px 1px 2px rgba(112,0,0,0.2);
+    }
+
+    .header-wrapper .title {
+        font-size: 1.4em;
+        font-family: 'Roboto Condensed', sans-serif;
+        margin: auto 0;
+        vertical-align: middle;
+    }
 
 
 /*Home Styles*/
 .home-body-wrapper {
     height: 100%;
-    width: 100%;
+    margin-top: 100px;
 }
 
-.swiper-container.home-swiper-container{
-    width: 100%;
+.slick-wrapper {
+    width: 60%;
+    margin: auto;
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    padding: 20px;
+    background: rgba(51,51,51, 0.9);
 }
 
-.home-slide-wrapper {
-    height: 100%;
-    width: 100%;
+.slick-slide {
+    outline: none
 }
 
-.home-slide {
-    height: 100vh;
-    width: 100%;
+.carousel_slide {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: #ff5e00;
+    max-height: 100%;
+    padding: 30px;
 }
 
-    .home-slide.slide-1 {
-        background-color: #ff5e00;
-        height: 100vh;
-    }
-    .home-slide.slide-2 {
-        background-color: #00a2ff;
+    .carousel_slide img {
+        max-width: 100%;
+        max-height: 400px;
+        margin: 0 auto;
+        border-radius: 10px;
+        box-shadow: 5px 5px 5px rgba(0,0,0,0.2);
     }
 
+.next-button-container {
+    display: flex;
+    flex-direction: row-reverse;
+}
 
+    .next-button-container .carousel-next {
+        background: rgba(0, 128, 255, 0.7);
+        transition: background 0.2s ease;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+        border: none;
+    }
+
+        .next-button-container .carousel-next:hover {
+            background: rgba(0, 128, 255, 1);
+            cursor: pointer;
+        }
+
+        .next-button-container .carousel-next:focus {
+            outline: none;
+        }

@@ -3,28 +3,34 @@
 }
 
 <div class="home-body-wrapper">
-    <!-- Slider main container -->
-    <div class="swiper-container home-swiper-container">
-        <!-- Additional required wrapper -->
-        <div class="swiper-wrapper">
-            <!-- Slides -->
-            <div class="swiper-slide home-slide slide-1">
-                <p>Slide 1</p>
+    <div class="slick-wrapper">
+        <div class="slick">
+            <div class="carousel_slide">
+                <img src="https://s2.r29static.com/bin/entry/059/x,80/2246859/image.jpg" alt="">
             </div>
-            <div class="swiper-slide home-slide slide-2">
-                <p>Slide 2</p>
+            <div class="carousel_slide">
+                <img src="https://www.rollingstone.com/wp-content/uploads/2018/06/shawn-mendes-qa-13151316-0ef93af2-a8a4-4057-b8dc-bcfdc71abd9d.jpg?resize=1800,1200&w=1800" alt="">
+            </div>
+            <div class="carousel_slide">
+                <img src="https://assets.teenvogue.com/photos/5f58d4e14111b77a6cb7f808/4:3/w_3015,h_2261,c_limit/GettyImages-1228408822.jpg" alt="">
             </div>
         </div>
-        <!-- Add Pagination -->
-        <div class="swiper-pagination"></div>
+        <div class="next-button-container">
+            <button class="carousel-next">Next</button>
+        </div>
     </div>
-
 </div>
 
 <script>
-    var mySwiper = new Swiper('.swiper-container', {
-        direction: 'vertical',
-        slidesPerView: 1,
-        parallax: true,
+    $(document).ready(function () {
+        $('.slick').slick({
+            dots: false,
+            infinite: true,
+            speed: 300,
+            slidesToShow: 1,
+            arrows: true,
+            nextArrow: $('.carousel-next'),
+            prevArrow: $(''),
+        });
     });
 </script>
