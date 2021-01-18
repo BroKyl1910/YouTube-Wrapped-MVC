@@ -16,13 +16,14 @@ namespace YouTubeWrappedMVC.Helpers
         public async Task Initialise(string takeoutDataJson)
         {
             System.Diagnostics.Debug.WriteLine("Starting");
-            List<HistoryVideo> historyVideos = GetHistoryFromJson(takeoutDataJson).ToList();
-            System.Diagnostics.Debug.WriteLine("Fetching video data");
-            Dictionary<string, VideoViewModel> videoViewModelsDict = await GetVideosFromApi(historyVideos.Take(5000).ToList());
-            System.Diagnostics.Debug.WriteLine("Doing calculations");
+            //List<HistoryVideo> historyVideos = GetHistoryFromJson(takeoutDataJson).ToList();
+            //System.Diagnostics.Debug.WriteLine("Fetching video data");
+            //Dictionary<string, VideoViewModel> videoViewModelsDict = await GetVideosFromApi(historyVideos.Take(5000).ToList());
+            //System.Diagnostics.Debug.WriteLine("Doing calculations");
             
-            PerformCalculations(historyVideos, videoViewModelsDict);
-
+            //PerformCalculations(historyVideos, videoViewModelsDict);
+            System.Diagnostics.Debug.WriteLine("Sending email");
+            await MailJetHelper.SendEmail();
             System.Diagnostics.Debug.WriteLine("Complete");
         }
 
