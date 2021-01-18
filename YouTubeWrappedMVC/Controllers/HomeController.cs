@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using YouTubeWrappedMVC.Helpers;
@@ -21,13 +23,37 @@ namespace YouTubeWrappedMVC.Controllers
         }
 
         [HttpPost]
-        public IActionResult Index([FromServices] TaskQueue taskQueue)
+        [ValidateAntiForgeryToken]
+        public string Index([FromServices] TaskQueue taskQueue, [FromForm] IFormFile file, string email)
         {
-            _ = taskQueue.Enqueue(async () => await new ProcessYouTubeData().Initialise());
+            try
+            {
+                //string json = ReadTakeoutFile(file);
+                //_ = taskQueue.Enqueue(async () => await new ProcessYouTubeData().Initialise(json));
+            }
+            catch (Exception ex)
+            {
+                return JsonConvert.SerializeObject(new
+                {
+                    error = ex.Message
+                });
+            }
 
-            return View();
+            return JsonConvert.SerializeObject(new
+            {
+                message = "Ok"
+            });
         }
 
-       
+        private string ReadTakeoutFile(IFormFile file)
+        {
+            var result = new StringBuilder();
+            using (var reader = new StreamReader(file.OpenReadStream()))
+            {
+                while (reader.Peek() >= 0)
+                    result.AppendLine(reader.ReadLine());
+            }
+            return result.ToString();
+        }
     }
 }

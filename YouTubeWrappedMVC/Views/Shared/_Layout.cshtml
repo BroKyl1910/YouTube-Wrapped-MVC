@@ -16,20 +16,19 @@
 </head>
 <body>
     <div class="header-wrapper">
-        <i class="fab fa-youtube youtube-icon"></i>
-        <span class="title">Wrapped</span>
-
+        <div class="title-wrapper">
+            <i class="fab fa-youtube youtube-icon"></i>
+            <span class="title">Wrapped</span>
+        </div>
+        <div class="credits-wrapper">
+            Made with <span class="heart-emoji">&#10084;&#65039;</span> by Kyle Brooks
+        </div>
     </div>
     <main role="main" class="pb-3">
         @RenderBody()
     </main>
 
 
-    @*<footer class="border-top footer text-muted">
-            <div class="container">
-                &copy; 2021 - YouTube Wrapped - Developed with &#10084;&#65039; by Kyle Brooks
-            </div>
-        </footer>*@
     @RenderSection("Scripts", required: false)
 </body>
 </html>

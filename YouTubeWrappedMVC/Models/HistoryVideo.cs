@@ -4,7 +4,7 @@ using System.Text;
 
 namespace YouTubeWrappedMVC.Models
 {
-    class HistoryVideo
+    public class HistoryVideo
     {
         public string Header { get; set; }
         public string Title { get; set; }

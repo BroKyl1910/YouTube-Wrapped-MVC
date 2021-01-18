@@ -13,50 +13,24 @@ namespace YouTubeWrappedMVC.Helpers
     {
         private static Dictionary<string, VideoViewModel> pastSearchesDict = new Dictionary<string, VideoViewModel>();
 
-        public async Task Initialise()
+        public async Task Initialise(string takeoutDataJson)
         {
-            System.Diagnostics.Debug.WriteLine("Starting...");
-            List<HistoryVideo> historyVideos = GetHistoryFromFile().Take(1000).ToList();
-            Dictionary<string, VideoViewModel> videoViewModelsDict = await GetVideosFromApi(historyVideos.Take(1000).ToList());
-
-            System.Diagnostics.Debug.WriteLine("Videos Retrieved");
-            System.Diagnostics.Debug.WriteLine("Processing...");
-
-            var dates = historyVideos.Select(v => v.GetTime().Date).Distinct().ToList();
-            List<TimeSpan> timeWatched = new List<TimeSpan>();
-
-            foreach (DateTime date in dates)
-            {
-                var videosOnDay = historyVideos.Where(h => h.GetTime().Date == date.Date).ToList();
-                TimeSpan timeForDay = new TimeSpan(0, 0, 0);
-                foreach (HistoryVideo video in videosOnDay)
-                {
-                    if (videoViewModelsDict.ContainsKey(video.GetVideoID()))
-                    {
-                        VideoViewModel viewModel = videoViewModelsDict[video.GetVideoID()];
-                        timeForDay = timeForDay.Add(viewModel.GetDuration());
-
-                    }
-                }
-                timeWatched.Add(timeForDay);
-            }
-
-            var orderedZip = dates.Zip(timeWatched, (x, y) => new { x, y })
-                      .OrderByDescending(pair => pair.x)
-                      .ToList();
-            dates = orderedZip.Select(pair => pair.x).ToList();
-            timeWatched = orderedZip.Select(pair => pair.y).ToList();
-            using (StreamWriter sw = new StreamWriter("AppData/minutes-by-date-luke.csv"))
-            {
-                for (int i = 0; i < dates.Count; i++)
-                {
-                    sw.WriteLine(dates[i].Date.ToShortDateString() + ";" + timeWatched[i].Hours + " Hours, " + timeWatched[i].Minutes + " Minutes and " + timeWatched[i].Seconds + " Seconds");
-                }
-            }
+            System.Diagnostics.Debug.WriteLine("Starting");
+            List<HistoryVideo> historyVideos = GetHistoryFromJson(takeoutDataJson).ToList();
+            System.Diagnostics.Debug.WriteLine("Fetching video data");
+            Dictionary<string, VideoViewModel> videoViewModelsDict = await GetVideosFromApi(historyVideos.Take(5000).ToList());
+            System.Diagnostics.Debug.WriteLine("Doing calculations");
+            
+            PerformCalculations(historyVideos, videoViewModelsDict);
 
             System.Diagnostics.Debug.WriteLine("Complete");
         }
 
+        private static void PerformCalculations(List<HistoryVideo> historyVideos, Dictionary<string, VideoViewModel> videoViewModelsDict)
+        {
+            Calculations.GetHistoryContext(historyVideos);
+            Calculations.HoursPerDay(historyVideos, videoViewModelsDict);
+        }
 
         private async Task<Dictionary<string, VideoViewModel>> GetVideosFromApi(List<HistoryVideo> historyVideos)
         {
@@ -140,11 +114,10 @@ namespace YouTubeWrappedMVC.Helpers
             }
         }
 
-        private List<HistoryVideo> GetHistoryFromFile()
+        private List<HistoryVideo> GetHistoryFromJson(string takeoutDataJson)
         {
             List<HistoryVideo> historyVideos;
-            string historyJson = System.IO.File.ReadAllText("AppData/watch-history-luke.json");
-            historyVideos = JsonConvert.DeserializeObject<List<HistoryVideo>>(historyJson);
+            historyVideos = JsonConvert.DeserializeObject<List<HistoryVideo>>(takeoutDataJson);
 
             return historyVideos.Where(h => h.TitleUrl != null).ToList();
         }

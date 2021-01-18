@@ -32,23 +32,69 @@ html {
     background: rgb(30,30,30);
     padding: 20px;
     box-shadow: 2px 2px 2px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
-    .header-wrapper .youtube-icon {
-        font-size: 1.6em;
-        margin: auto 0;
-        vertical-align: middle;
-        color: red;
-        text-shadow: 1px 1px 2px rgba(112,0,0,0.2);
+.credits-wrapper {
+    color: rgba(255,255,255,0.3);
+}
+
+    .credits-wrapper .heart-emoji {
+        opacity: 0.5;
     }
 
-    .header-wrapper .title {
-        font-size: 1.4em;
-        font-family: 'Roboto Condensed', sans-serif;
-        margin: auto 0;
-        vertical-align: middle;
+    .credits-wrapper:hover {
+        color: rgba(255,255,255,0.8);
+        animation: flicker 5s ease-in-out infinite;
+        cursor: pointer;
     }
 
+        .credits-wrapper:hover .heart-emoji {
+            opacity: 1;
+        }
+
+.header-wrapper .youtube-icon {
+    font-size: 1.6em;
+    margin: auto 0;
+    vertical-align: middle;
+    color: red;
+    text-shadow: 1px 1px 2px rgba(112,0,0,0.2);
+}
+
+.header-wrapper .title {
+    font-size: 1.4em;
+    font-family: 'Roboto Condensed', sans-serif;
+    margin: auto 0;
+    vertical-align: middle;
+}
+
+@keyframes flicker {
+    0%{
+        opacity: 0.3;
+    }
+
+    25% {
+        opacity: 0.6;
+    }
+
+    50% {
+        opacity: 0.4;
+    }
+
+    75% {
+        opacity: 1;
+    }
+
+    85%{
+        opacity: 0.6
+    }
+
+    100%{
+        opacity: 0.4;
+    }
+}
 
 /*Home Styles*/
 p {
@@ -314,20 +360,23 @@ p {
     margin-top: 15px;
     display: flex;
     flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .form-submit-button {
     padding: 15px;
-    background: rgba(0,0,0,0.3);
+    background: rgba(255,255,255,0.3);
     border: none;
     border-radius: 10px;
-    color: rgba(255,255,255,0.5);
+    color: rgba(255, 255, 255, 1);
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
     box-shadow: 2px 2px 2px rgba(0,0, 0, 0.2);
 }
 
     .form-submit-button:hover {
-        background: rgba(0,0,0,0.5);
-        color: rgba(255,255,255,0.7);
+        background: rgba(255,255,255,0.2);
+        color: rgba(255,255,255,0.8);
         cursor: pointer;
     }
 
@@ -335,7 +384,28 @@ p {
         outline: none;
     }
 
+.error-message {
+    color: red;
+    display: none;
+}
 
+.home-success-heading {
+    padding-bottom: 5px;
+    border-bottom: 2px solid rgba(255,255,255,0.7);
+}
+
+    .home-success-heading * {
+        font-family: 'Roboto Condensed';
+        font-size: 40px;
+        vertical-align: middle;
+        text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    }
+
+    .home-success-heading .check-icon {
+        color: red;
+        font-size: 40px;
+        margin-right: 10px;
+    }
 
 
 

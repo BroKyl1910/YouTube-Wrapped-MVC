@@ -44,19 +44,35 @@
                         data, if you don't know how to do this, click here. Your email address will be used to notify you when your
                         data is ready to be viewed.
                     </p>
-                    <form action="/" method="post" class="home-upload-form animated slide-up delayed ms700">
-                        <input type="email" name="email" placeholder="Please enter your email address..." class="input-control" />
+                    <form action="/Home" method="post" enctype="multipart/form-data" class="home-upload-form animated slide-up delayed ms700">
+                        @Html.AntiForgeryToken()
+                        <input type="email" name="email" placeholder="Please enter your email address..." class="input-control email-input" />
                         <div class="file-input-wrapper">
                             <div class="file-input-container">
-                                <input type="file" name="file" id="file" class="file-input" accept=".json"/>
+                                <input type="file" name="file" class="file-input" id="file" accept=".json" />
                                 <label for="file" class="file-input-label waiting"><i class="fas fa-file-upload label-upload-icon"></i>Upload Takeout file (.json)</label>
                                 <label for="file" class="file-input-label selected"><i class="fas fa-check label-check-icon"></i>File selected</label>
                             </div>
                         </div>
                         <div class="form-proceed-button-wrapper">
-                            <button class="proceed-text form-submit-button">Submit</button>
+                            <button class="form-submit-button">Submit</button>
+                            <span class="error-message">Please enter your email address</span>
                         </div>
                     </form>
+                </div>
+            </div>
+            <div class="carousel_slide">
+                <div class="home-success-heading animated slide-in-left">
+                    <i class="fas fa-check check-icon"></i>
+                    <span>Upload Successful</span>
+                </div>
+                <div class="home-upload-body">
+                    <p class="animated slide-in-right delayed ms500">
+                        Your Takeout data has been successfully submitted! Please don't let us keep you waiting, you will receive an email when your data is ready to view.
+                    </p>
+
+
+
                 </div>
             </div>
         </div>
@@ -75,7 +91,12 @@
             prevArrow: $('.back-text'),
             vertical: true,
             verticalSwiping: false,
-            adaptiveHeight: true
+            adaptiveHeight: true,
+            draggable: false,
+            swipe: false,
+            swipeToSlide: false,
+            touchMove: false,
+            draggable: false
         }).on("beforeChange", function (event, slick, currentSlide, nextSlide) {
             restartAnimations(nextSlide);
         }).on('setPosition', function (event, slick) {
@@ -84,6 +105,57 @@
 
         fixHeights();
         setupCustomFileInput();
+    });
+
+    $('.home-upload-form').on('submit', (e) => {
+        var errorMessage = $('.error-message');
+        if ($('.email-input').val() == "") {
+            $(errorMessage).show();
+            $(errorMessage).html('Please enter your email address');
+            return false;
+        }
+
+        if ($('.file-input').prop('files').length == 0) {
+            $(errorMessage).show();
+            $(errorMessage).html('Please upload your Google Takeout file');
+            return false;
+        }
+
+        if ($('.file-input').prop('files')[0].name != 'watch-history.json') {
+            $(errorMessage).show();
+            $(errorMessage).html('Please select watch-history.json from your Google Takeout folder');
+            return false;
+        }
+
+        $(errorMessage).hide('');
+        $(errorMessage).html('');
+
+        var fd = new FormData();
+        fd.append("__RequestVerificationToken", $('input[name="__RequestVerificationToken"]').val());
+        fd.append('email', $('.email-input').val());
+        fd.append('file', $('.file-input').prop('files')[0]);
+
+        $.ajax({
+            url: 'Home/',
+            data: fd,
+            processData: false,
+            contentType: false,
+            type: 'POST',
+            success: function (data) {
+                console.log(data);
+                var dataObj = JSON.parse(data);
+                if (dataObj.error == null) {
+                    $('.slick').slick('slickNext');
+                }
+                else {
+                    $(errorMessage).show();
+                    $(errorMessage).html(dataObj.error);
+                }
+            }
+        });
+
+        e.preventDefault();
+        return false;
     });
 
     function fixHeights() {
