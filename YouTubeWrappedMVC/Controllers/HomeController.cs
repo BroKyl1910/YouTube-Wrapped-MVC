@@ -29,7 +29,7 @@ namespace YouTubeWrappedMVC.Controllers
             try
             {
                 string json = ReadTakeoutFile(file);
-                _ = taskQueue.Enqueue(async () => await new ProcessYouTubeData().Initialise(json));
+                _ = taskQueue.Enqueue(async () => await new ProcessYouTubeData().Initialise(json, email));
             }
             catch (Exception ex)
             {

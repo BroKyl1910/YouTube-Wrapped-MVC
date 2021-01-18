@@ -11,7 +11,7 @@ namespace YouTubeWrappedMVC.Helpers
 {
     public class MailJetHelper
     {
-        public static async Task SendEmail()
+        public static async Task SendEmail(string emailAddress, string url)
         {
             MailjetClient client = new MailjetClient(
             Environment.GetEnvironmentVariable("$MJ_APIKEY_PUBLIC", EnvironmentVariableTarget.Machine),
@@ -25,9 +25,9 @@ namespace YouTubeWrappedMVC.Helpers
          // construct your email with builder
             var email = new TransactionalEmailBuilder()
                 .WithFrom(new SendContact("brooks.kyle621@gmail.com"))
-                .WithSubject("Test subject")
-                .WithHtmlPart("<h1>Header</h1>")
-                .WithTo(new SendContact("brooks.kyle621@gmail.com"))
+                .WithSubject("YouTube Wrapped data ready to view")
+                .WithHtmlPart("<p>Hey there!</p> <p>We are pleased to inform you that your data is ready to view at: <br/>"+url+"</p>")
+                .WithTo(new SendContact(emailAddress))
                 .Build();
 
             // invoke API to send email

@@ -1,9 +1,9 @@
-General Data Context - Which Months
-Most viewed video
-Most viewed channel
-How many times you watched a video
-How many hours from one channel
-How many videos from that channel
+General Data Context - Which Months ✓
+Most viewed video ✓
+Most viewed channel ✓
+How many times you watched a video ✓
+How many hours from one channel ✓
+How many videos from that channel ✓
 Month with the most time watched
 Mean, mode, meridian length of video
 

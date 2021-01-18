@@ -13,24 +13,28 @@ namespace YouTubeWrappedMVC.Helpers
     {
         private static Dictionary<string, VideoViewModel> pastSearchesDict = new Dictionary<string, VideoViewModel>();
 
-        public async Task Initialise(string takeoutDataJson)
+        public async Task Initialise(string takeoutDataJson, string emailAddress)
         {
             System.Diagnostics.Debug.WriteLine("Starting");
-            //List<HistoryVideo> historyVideos = GetHistoryFromJson(takeoutDataJson).ToList();
-            //System.Diagnostics.Debug.WriteLine("Fetching video data");
-            //Dictionary<string, VideoViewModel> videoViewModelsDict = await GetVideosFromApi(historyVideos.Take(5000).ToList());
-            //System.Diagnostics.Debug.WriteLine("Doing calculations");
-            
-            //PerformCalculations(historyVideos, videoViewModelsDict);
+            List<HistoryVideo> historyVideos = GetHistoryFromJson(takeoutDataJson).ToList();
+            System.Diagnostics.Debug.WriteLine("Fetching video data");
+            Dictionary<string, VideoViewModel> videoViewModelsDict = await GetVideosFromApi(historyVideos.Take(5000).ToList());
+            System.Diagnostics.Debug.WriteLine("Doing calculations");
+
+            PerformCalculations(historyVideos, videoViewModelsDict);
             System.Diagnostics.Debug.WriteLine("Sending email");
-            await MailJetHelper.SendEmail();
+            //await MailJetHelper.SendEmail(emailAddress, "https://localhost:44369/");
             System.Diagnostics.Debug.WriteLine("Complete");
         }
 
         private static void PerformCalculations(List<HistoryVideo> historyVideos, Dictionary<string, VideoViewModel> videoViewModelsDict)
         {
-            Calculations.GetHistoryContext(historyVideos);
-            Calculations.HoursPerDay(historyVideos, videoViewModelsDict);
+            Calculations calculations = new Calculations(historyVideos, videoViewModelsDict);
+            //calculations.GetHistoryContext();
+            //calculations.HoursPerDay();
+            //calculations.MostViewedVideos();
+            //calculations.MostViewedChannel();
+            calculations.MostTimeChannel();
         }
 
         private async Task<Dictionary<string, VideoViewModel>> GetVideosFromApi(List<HistoryVideo> historyVideos)
@@ -50,7 +54,7 @@ namespace YouTubeWrappedMVC.Helpers
                     }
                     else
                     {
-                        ApiVideo apiVideo = await GetVideoDataFromApi(id);
+                        ApiVideo apiVideo = await YouTubeApiHelper.GetVideoDataFromApi(id);
                         if (apiVideo.Items.Length > 0)
                         {
                             VideoViewModel viewModel = VideoViewModel.FromApiVideo(apiVideo);
@@ -95,25 +99,7 @@ namespace YouTubeWrappedMVC.Helpers
             }
         }
 
-        private async Task<ApiVideo> GetVideoDataFromApi(string videoId)
-        {
-            Uri uri = new Uri(@"https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails&id=" + videoId + "&key=AIzaSyDYJH4akcKKjhWuxJKbs3dIl_56dk6masM");
 
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(uri);
-            request.AutomaticDecompression = DecompressionMethods.GZip;
-            //request.UserAgent = "12345";
-
-            string responseString = string.Empty;
-            using (HttpWebResponse response = (HttpWebResponse)await request.GetResponseAsync())
-            using (Stream stream = response.GetResponseStream())
-            using (StreamReader reader = new StreamReader(stream))
-            {
-                responseString = reader.ReadToEnd();
-                ApiVideo apiVideo = JsonConvert.DeserializeObject<ApiVideo>(responseString);
-                return apiVideo;
-
-            }
-        }
 
         private List<HistoryVideo> GetHistoryFromJson(string takeoutDataJson)
         {
