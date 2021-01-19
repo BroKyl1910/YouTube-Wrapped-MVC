@@ -34,7 +34,10 @@ namespace YouTubeWrappedMVC.Helpers
             //calculations.HoursPerDay();
             //calculations.MostViewedVideos();
             //calculations.MostViewedChannel();
-            calculations.MostTimeChannel();
+            //calculations.MostTimeChannel();
+            //calculations.GetAverageDailyWatchTime();
+            //calculations.GetAverageLengthOfVideo();
+            calculations.GetHoursMostFrequentlyWatched();
         }
 
         private async Task<Dictionary<string, VideoViewModel>> GetVideosFromApi(List<HistoryVideo> historyVideos)

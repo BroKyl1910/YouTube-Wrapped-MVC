@@ -4,8 +4,8 @@ Most viewed channel ✓
 How many times you watched a video ✓
 How many hours from one channel ✓
 How many videos from that channel ✓
-Month with the most time watched
-Mean, mode, meridian length of video
+Month with the most time watched ✓
+Average length of video ✓
 
 Katherine
 =========
@@ -14,5 +14,13 @@ How many different channels ✓
 Damien
 ======
 Total number of videos watched ✓
-Average daily watch time
-Hours most frequently watched
+Average daily watch time ✓
+Hours most frequently watched ✓
+
+4 - 7 crack of dawn
+7 - 10 early morning
+10 - 2 midday
+2 - 5 late afternoon
+5 - 9 early evening
+9 - 12 late evening
+12 - 4 night owl hours

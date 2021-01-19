@@ -12,17 +12,124 @@ namespace YouTubeWrappedMVC.Helpers
         private List<HistoryVideo> HistoryVideos { get; set; }
         private Dictionary<string, VideoViewModel> VideoViewModelsDict { get; set; }
 
-        public Calculations()
-        {
-        }
 
         public Calculations(List<HistoryVideo> historyVideos, Dictionary<string, VideoViewModel> videoViewModelsDict)
         {
             HistoryVideos = historyVideos;
             VideoViewModelsDict = videoViewModelsDict;
+            CleanseHistoryVideos();
+            //System.Diagnostics.Debug.WriteLine("HistoryVideos Count: " + HistoryVideos.Count);
         }
 
+        // Remove all videos that don't have data in the dictionary
+        private void CleanseHistoryVideos()
+        {
+            HistoryVideos = HistoryVideos.Where(v => VideoViewModelsDict.ContainsKey(v.GetVideoID())).ToList();
+        }
 
+        // Get a list of timeframes and amount of time watched in each
+        public List<TimeWatchedPerTimeframeViewModel> GetHoursMostFrequentlyWatched()
+        {
+            List<string> timeCategoryNames = new List<string> { 
+                "Late Evening",
+                "Night Owl Hours",
+                "Crack of Dawn",
+                "Early Morning",
+                "Midday",
+                "Late Afternoon",
+                "Early Evening",
+            };
+
+            List<string> timeCategoryBounds = new List<string> { 
+                "Between 9pm and 12am",
+                "Between 12am and 4am",
+                "Between 4am and 7am",
+                "Between 7am and 10am",
+                "Between 10am and 2pm",
+                "Between 2pm and 5pm",
+                "Between 5pm and 9pm",
+            };
+
+            List<DateTime> timeUpperBounds = new List<DateTime>()
+            {
+                new DateTime (1,1,1,0,0,0),
+                new DateTime (1,1,1,4,0,0),
+                new DateTime (1,1,1,7,0,0),
+                new DateTime (1,1,1,10,0,0),
+                new DateTime (1,1,1,14,0,0),
+                new DateTime (1,1,1,17,0,0),
+                new DateTime (1,1,1,21,0,0),
+                
+            };
+
+            List<TimeSpan> timesWatched = new List<TimeSpan>() { 
+                new TimeSpan(0,0,0),
+                new TimeSpan(0,0,0),
+                new TimeSpan(0,0,0),
+                new TimeSpan(0,0,0),
+                new TimeSpan(0,0,0),
+                new TimeSpan(0,0,0),
+                new TimeSpan(0,0,0),
+            };
+
+            foreach(var video in HistoryVideos)
+            {
+                bool categorised = false;
+                for (int i = 0; i < timeUpperBounds.Count; i++)
+                {
+                    DateTime timeFrame = timeUpperBounds[i];
+                    if (video.GetTime().TimeOfDay.CompareTo(timeFrame.TimeOfDay) <= 0)
+                    {
+                        timesWatched[i] = timesWatched[i].Add(VideoViewModelsDict[video.GetVideoID()].GetDuration());
+                        categorised = true;
+                        break;
+                    }
+                }
+                if (!categorised)
+                {
+                    timesWatched[0] = timesWatched[0].Add(VideoViewModelsDict[video.GetVideoID()].GetDuration());
+                }
+            }
+
+            List<TimeWatchedPerTimeframeViewModel> viewModels = new List<TimeWatchedPerTimeframeViewModel>();
+            var totalTimeWatched = timesWatched.Sum(t => t.TotalMinutes);
+            for (int i = 0; i < timesWatched.Count; i++)
+            {
+                viewModels.Add(new TimeWatchedPerTimeframeViewModel()
+                {
+                    TimeFrameName = timeCategoryNames[i],
+                    TimeFrameTimes = timeCategoryBounds[i],
+                    TimeWatched = timesWatched[i],
+                    PercentageOfTotal = Math.Round((timesWatched[i].TotalMinutes/totalTimeWatched)*100)+"%"
+                });
+            }
+            viewModels = viewModels.OrderByDescending(vm => vm.TimeWatched).ToList();
+            return viewModels;
+        }
+
+        // Get month with the most time watched
+        public List<MonthTimeWatchedViewModel> GetTimeWatchedPerMonth()
+        {
+            var monthViewModels = HistoryVideos.Select(v => new MonthYearViewModel(v.GetTime().Month, v.GetTime().Year)).Distinct().ToList();
+            var monthlyHours = monthViewModels.Select(vm => HistoryVideos.Where(h => new MonthYearViewModel(h.GetTime().Month, h.GetTime().Year) == vm).Sum(v => VideoViewModelsDict[v.GetVideoID()].GetDuration().TotalHours)).ToList();
+
+            List<MonthTimeWatchedViewModel> viewModels = new List<MonthTimeWatchedViewModel>();
+            for (int i = 0; i < monthViewModels.Count; i++)
+            {
+                viewModels.Add(new MonthTimeWatchedViewModel(monthViewModels[i], Math.Round(monthlyHours[i])));
+            }
+
+            return viewModels.OrderByDescending(vm => vm.HoursWatched).ToList();
+        }
+
+        // Get average length of video in history in miniutes
+        public double GetAverageLengthOfVideo()
+        {
+            var lengths = HistoryVideos.Select(v => VideoViewModelsDict[v.GetVideoID()].GetDuration());
+            double averageTotalSeconds = lengths.Average(l => l.TotalSeconds);
+            double averageMinutes = Math.Round(averageTotalSeconds / 60);
+            return averageMinutes;
+        }
 
         // Get start and end date of history
         public HistoryContext GetHistoryContext()
@@ -37,6 +144,16 @@ namespace YouTubeWrappedMVC.Helpers
             };
         }
 
+        // Get average time watched per day in hours
+        public double GetAverageDailyWatchTime()
+        {
+            var dates = HistoryVideos.Select(v => v.GetTime().Date).Distinct().ToList();
+            var dailyTimesMinutes = dates.Select(d => HistoryVideos.Where(h => h.GetTime().Date.Equals(d.Date)).Sum(v=> VideoViewModelsDict[v.GetVideoID()].GetDuration().TotalMinutes));
+            double averageTimeMinutes = dailyTimesMinutes.Average();
+            double averageTimeHours = Math.Round(averageTimeMinutes / 60);
+            return averageTimeHours;
+        }
+
         // Get total number of videos watched
         public int GetTotalVideosWatched()
         {
@@ -46,27 +163,17 @@ namespace YouTubeWrappedMVC.Helpers
         // Get total number of unqiue videos watched
         public int GetTotalUniqueVideosWatched()
         {
-            return HistoryVideos.Select(hv=> hv.GetVideoID()).Distinct().Count();
+            return HistoryVideos.Select(hv => hv.GetVideoID()).Distinct().Count();
         }
 
         // Get total number of channels watched
         public int GetTotalUniqueChannelsWatched()
         {
-            var channelIds = new List<string>();
-            foreach (var video in HistoryVideos)
-            {
-                if (VideoViewModelsDict.ContainsKey(video.GetVideoID()))
-                {
-                    channelIds.Add(VideoViewModelsDict[video.GetVideoID()].ChannelId);
-                }
-            }
-
-            channelIds = channelIds.Distinct().ToList();
-            return channelIds.Count;
+            return HistoryVideos.Select(v => VideoViewModelsDict[v.GetVideoID()].ChannelId).Distinct().Count();
         }
 
         // Calculate how many hours the user watched per day of their history
-        public List<HoursPerDayViewModel> HoursPerDay()
+        public List<HoursPerDayViewModel> GetHoursPerDay()
         {
             var dates = HistoryVideos.Select(v => v.GetTime().Date).Distinct().ToList();
             List<TimeSpan> timeWatched = new List<TimeSpan>();
@@ -77,12 +184,8 @@ namespace YouTubeWrappedMVC.Helpers
                 TimeSpan timeForDay = new TimeSpan(0, 0, 0);
                 foreach (HistoryVideo video in videosOnDay)
                 {
-                    if (VideoViewModelsDict.ContainsKey(video.GetVideoID()))
-                    {
-                        VideoViewModel viewModel = VideoViewModelsDict[video.GetVideoID()];
-                        timeForDay = timeForDay.Add(viewModel.GetDuration());
-
-                    }
+                    VideoViewModel viewModel = VideoViewModelsDict[video.GetVideoID()];
+                    timeForDay = timeForDay.Add(viewModel.GetDuration());
                 }
                 timeWatched.Add(timeForDay);
             }
@@ -110,7 +213,7 @@ namespace YouTubeWrappedMVC.Helpers
         }
 
         // Calculate most viewed videos
-        public List<ViewsPerVideoViewModel> MostViewedVideos()
+        public List<ViewsPerVideoViewModel> GetMostViewedVideos()
         {
             var videoIds = HistoryVideos.Select(v => v.GetVideoID()).Distinct().ToList();
             var timesWatched = videoIds.Select(id => HistoryVideos.Count(v => v.GetVideoID() == id)).ToList();
@@ -118,14 +221,11 @@ namespace YouTubeWrappedMVC.Helpers
             List<ViewsPerVideoViewModel> viewsPerVideoViewModels = new List<ViewsPerVideoViewModel>();
             for (int i = 0; i < videoIds.Count; i++)
             {
-                if (VideoViewModelsDict.ContainsKey(videoIds[i]))
+                viewsPerVideoViewModels.Add(new ViewsPerVideoViewModel()
                 {
-                    viewsPerVideoViewModels.Add(new ViewsPerVideoViewModel()
-                    {
-                        VideoViewModel = VideoViewModelsDict[videoIds[i]],
-                        NumViews = timesWatched[i]
-                    });
-                }
+                    VideoViewModel = VideoViewModelsDict[videoIds[i]],
+                    NumViews = timesWatched[i]
+                });
             }
 
             viewsPerVideoViewModels = viewsPerVideoViewModels.OrderByDescending(vm => vm.NumViews).ToList();
@@ -141,31 +241,28 @@ namespace YouTubeWrappedMVC.Helpers
         }
 
         // Calculate most viewed channel
-        public List<ViewsPerChannelViewModel> MostViewedChannel()
+        public List<ViewsPerChannelViewModel> GetMostViewedChannel()
         {
             var channelTitles = new List<string>();
             var numVideosWatched = new List<int>();
-            foreach(var video in HistoryVideos)
+            foreach (var video in HistoryVideos)
             {
-                if (VideoViewModelsDict.ContainsKey(video.GetVideoID()))
-                {
-                    channelTitles.Add(VideoViewModelsDict[video.GetVideoID()].ChannelTitle);
-                }
+
+                channelTitles.Add(VideoViewModelsDict[video.GetVideoID()].ChannelTitle);
+
             }
 
             channelTitles = channelTitles.Distinct().ToList();
-            foreach(var channelTitle in channelTitles)
+            foreach (var channelTitle in channelTitles)
             {
                 int numVids = 0;
-                foreach(HistoryVideo historyVideo in HistoryVideos)
+                foreach (HistoryVideo historyVideo in HistoryVideos)
                 {
-                    if (VideoViewModelsDict.ContainsKey(historyVideo.GetVideoID()))
+                    if (VideoViewModelsDict[historyVideo.GetVideoID()].ChannelTitle == channelTitle)
                     {
-                        if(VideoViewModelsDict[historyVideo.GetVideoID()].ChannelTitle == channelTitle)
-                        {
-                            numVids++;
-                        }
+                        numVids++;
                     }
+
                 }
                 numVideosWatched.Add(numVids);
                 numVids = 0;
@@ -196,30 +293,24 @@ namespace YouTubeWrappedMVC.Helpers
         }
 
         // Calculate most viewed channel
-        public List<TimePerChannelViewModel> MostTimeChannel()
+        public List<TimePerChannelViewModel> GetMostTimeChannel()
         {
             var channelTitles = new List<string>();
             var timeWatched = new List<TimeSpan>();
-            foreach(var video in HistoryVideos)
+            foreach (var video in HistoryVideos)
             {
-                if (VideoViewModelsDict.ContainsKey(video.GetVideoID()))
-                {
-                    channelTitles.Add(VideoViewModelsDict[video.GetVideoID()].ChannelTitle);
-                }
+                channelTitles.Add(VideoViewModelsDict[video.GetVideoID()].ChannelTitle);
             }
 
             channelTitles = channelTitles.Distinct().ToList();
-            foreach(var channelTitle in channelTitles)
+            foreach (var channelTitle in channelTitles)
             {
                 TimeSpan time = new TimeSpan(0, 0, 0);
-                foreach(HistoryVideo historyVideo in HistoryVideos)
+                foreach (HistoryVideo historyVideo in HistoryVideos)
                 {
-                    if (VideoViewModelsDict.ContainsKey(historyVideo.GetVideoID()))
+                    if (VideoViewModelsDict[historyVideo.GetVideoID()].ChannelTitle == channelTitle)
                     {
-                        if(VideoViewModelsDict[historyVideo.GetVideoID()].ChannelTitle == channelTitle)
-                        {
-                            time = time.Add(VideoViewModelsDict[historyVideo.GetVideoID()].GetDuration());
-                        }
+                        time = time.Add(VideoViewModelsDict[historyVideo.GetVideoID()].GetDuration());
                     }
                 }
                 timeWatched.Add(time);
@@ -244,8 +335,8 @@ namespace YouTubeWrappedMVC.Helpers
                 foreach (var viewModel in timePerChannelViewModels)
                 {
                     //sw.WriteLine(viewModel.ChannelName + ";" + viewModel.TimeWatched.TotalHours + " Hours " + viewModel.TimeWatched.Minutes + " Minutes and " + viewModel.TimeWatched.Seconds + " Seconds");
-                    sw.WriteLine(viewModel.ChannelName + ";" + Math.Round(viewModel.TimeWatched.TotalHours) + " Hours ("+ Math.Round(viewModel.TimeWatched.TotalHours*60)+" minutes)");
-                   
+                    sw.WriteLine(viewModel.ChannelName + ";" + Math.Round(viewModel.TimeWatched.TotalHours) + " Hours (" + Math.Round(viewModel.TimeWatched.TotalHours * 60) + " minutes)");
+
                 }
             }
 
