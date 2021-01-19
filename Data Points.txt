@@ -9,10 +9,10 @@ Mean, mode, meridian length of video
 
 Katherine
 =========
-How many different channels
+How many different channels ✓
 
 Damien
 ======
-Total number of videos watched
+Total number of videos watched ✓
 Average daily watch time
 Hours most frequently watched

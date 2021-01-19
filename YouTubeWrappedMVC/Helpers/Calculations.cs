@@ -37,6 +37,34 @@ namespace YouTubeWrappedMVC.Helpers
             };
         }
 
+        // Get total number of videos watched
+        public int GetTotalVideosWatched()
+        {
+            return HistoryVideos.Count;
+        }
+
+        // Get total number of unqiue videos watched
+        public int GetTotalUniqueVideosWatched()
+        {
+            return HistoryVideos.Select(hv=> hv.GetVideoID()).Distinct().Count();
+        }
+
+        // Get total number of channels watched
+        public int GetTotalUniqueChannelsWatched()
+        {
+            var channelIds = new List<string>();
+            foreach (var video in HistoryVideos)
+            {
+                if (VideoViewModelsDict.ContainsKey(video.GetVideoID()))
+                {
+                    channelIds.Add(VideoViewModelsDict[video.GetVideoID()].ChannelId);
+                }
+            }
+
+            channelIds = channelIds.Distinct().ToList();
+            return channelIds.Count;
+        }
+
         // Calculate how many hours the user watched per day of their history
         public List<HoursPerDayViewModel> HoursPerDay()
         {
