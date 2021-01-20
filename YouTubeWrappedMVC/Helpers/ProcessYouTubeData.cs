@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -13,8 +14,14 @@ namespace YouTubeWrappedMVC.Helpers
     {
         private static Dictionary<string, VideoViewModel> pastSearchesDict = new Dictionary<string, VideoViewModel>();
 
-        public async Task Initialise(string takeoutDataJson, string emailAddress)
+        public async Task Initialise(string jobId, string takeoutDataJson, string emailAddress)
         {
+            Stopwatch stopWatch = new Stopwatch();
+            stopWatch.Start();
+
+            // Update DB Status
+
+
             System.Diagnostics.Debug.WriteLine("Starting");
             List<HistoryVideo> historyVideos = GetHistoryFromJson(takeoutDataJson).ToList();
             System.Diagnostics.Debug.WriteLine("Fetching video data");
@@ -24,20 +31,44 @@ namespace YouTubeWrappedMVC.Helpers
             PerformCalculations(historyVideos, videoViewModelsDict);
             System.Diagnostics.Debug.WriteLine("Sending email");
             //await MailJetHelper.SendEmail(emailAddress, "https://localhost:44369/");
-            System.Diagnostics.Debug.WriteLine("Complete");
+
+            // Update DB Status
+
+            // Save Job to DB
+
+
+            stopWatch.Stop();
+            // Get the elapsed time as a TimeSpan value.
+            TimeSpan ts = stopWatch.Elapsed;
+
+            // Format and display the TimeSpan value.
+            string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
+                ts.Hours, ts.Minutes, ts.Seconds,
+                ts.Milliseconds / 10);
+
+            System.Diagnostics.Debug.WriteLine("Completed in "+elapsedTime);
         }
 
-        private static void PerformCalculations(List<HistoryVideo> historyVideos, Dictionary<string, VideoViewModel> videoViewModelsDict)
+        private YouTubeProcessingJob PerformCalculations(List<HistoryVideo> historyVideos, Dictionary<string, VideoViewModel> videoViewModelsDict)
         {
             Calculations calculations = new Calculations(historyVideos, videoViewModelsDict);
-            //calculations.GetHistoryContext();
-            //calculations.HoursPerDay();
-            //calculations.MostViewedVideos();
-            //calculations.MostViewedChannel();
-            //calculations.MostTimeChannel();
-            //calculations.GetAverageDailyWatchTime();
-            //calculations.GetAverageLengthOfVideo();
-            calculations.GetHoursMostFrequentlyWatched();
+
+            YouTubeProcessingJob job = new YouTubeProcessingJob()
+            {
+                HistoryContext = calculations.GetHistoryContext(),
+                TotalVideosWatched = calculations.GetTotalVideosWatched(),
+                TotalUniqueVideosWatched = calculations.GetTotalUniqueVideosWatched(),
+                MostViewedVideo = calculations.GetMostViewedVideos(),
+                TotalUniqueChannelsWatched = calculations.GetTotalUniqueChannelsWatched(),
+                TimeWatchedPerMonthViewModel = calculations.GetTimeWatchedPerMonth(),
+                AverageDailyWatchTime = calculations.GetAverageDailyWatchTime(),
+                AverageVideoLength = calculations.GetAverageLengthOfVideo(),
+                TimeWatchedPerTimeframe = calculations.GetHoursMostFrequentlyWatched(),
+                ViewsPerChannel = calculations.GetMostViewedChannel(),
+                TimeWatchedPerChannel = calculations.GetMostTimeChannel(),
+            };
+
+            return job;
         }
 
         private async Task<Dictionary<string, VideoViewModel>> GetVideosFromApi(List<HistoryVideo> historyVideos)

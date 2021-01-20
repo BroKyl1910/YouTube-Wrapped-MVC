@@ -5,16 +5,16 @@ using System.Threading.Tasks;
 
 namespace YouTubeWrappedMVC.Models
 {
-    public class MonthTimeWatchedViewModel
+    public class TimeWatchedPerMonthViewModel
     {
         public MonthYearViewModel MonthYearViewModel { get; set; }
         public double HoursWatched { get; set; }
 
-        public MonthTimeWatchedViewModel()
+        public TimeWatchedPerMonthViewModel()
         {
         }
 
-        public MonthTimeWatchedViewModel(MonthYearViewModel monthYearViewModel, double hoursWatched)
+        public TimeWatchedPerMonthViewModel(MonthYearViewModel monthYearViewModel, double hoursWatched)
         {
             MonthYearViewModel = monthYearViewModel;
             HoursWatched = hoursWatched;

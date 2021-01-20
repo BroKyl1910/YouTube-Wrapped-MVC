@@ -29,7 +29,9 @@ namespace YouTubeWrappedMVC.Controllers
             try
             {
                 string json = ReadTakeoutFile(file);
-                _ = taskQueue.Enqueue(async () => await new ProcessYouTubeData().Initialise(json, email));
+                string jobId = AddJobToDB();
+
+                _ = taskQueue.Enqueue(async () => await new ProcessYouTubeData().Initialise(jobId, json, email));
             }
             catch (Exception ex)
             {
@@ -54,6 +56,14 @@ namespace YouTubeWrappedMVC.Controllers
                     result.AppendLine(reader.ReadLine());
             }
             return result.ToString();
+        }
+
+        private string AddJobToDB()
+        {
+            string jobId = Guid.NewGuid().ToString();
+            //Add to db
+
+            return jobId;
         }
     }
 }

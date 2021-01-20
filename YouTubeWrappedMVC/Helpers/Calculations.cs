@@ -30,7 +30,7 @@ namespace YouTubeWrappedMVC.Helpers
         // Get a list of timeframes and amount of time watched in each
         public List<TimeWatchedPerTimeframeViewModel> GetHoursMostFrequentlyWatched()
         {
-            List<string> timeCategoryNames = new List<string> { 
+            List<string> timeCategoryNames = new List<string> {
                 "Late Evening",
                 "Night Owl Hours",
                 "Crack of Dawn",
@@ -40,7 +40,7 @@ namespace YouTubeWrappedMVC.Helpers
                 "Early Evening",
             };
 
-            List<string> timeCategoryBounds = new List<string> { 
+            List<string> timeCategoryBounds = new List<string> {
                 "Between 9pm and 12am",
                 "Between 12am and 4am",
                 "Between 4am and 7am",
@@ -59,10 +59,10 @@ namespace YouTubeWrappedMVC.Helpers
                 new DateTime (1,1,1,14,0,0),
                 new DateTime (1,1,1,17,0,0),
                 new DateTime (1,1,1,21,0,0),
-                
+
             };
 
-            List<TimeSpan> timesWatched = new List<TimeSpan>() { 
+            List<TimeSpan> timesWatched = new List<TimeSpan>() {
                 new TimeSpan(0,0,0),
                 new TimeSpan(0,0,0),
                 new TimeSpan(0,0,0),
@@ -72,7 +72,7 @@ namespace YouTubeWrappedMVC.Helpers
                 new TimeSpan(0,0,0),
             };
 
-            foreach(var video in HistoryVideos)
+            foreach (var video in HistoryVideos)
             {
                 bool categorised = false;
                 for (int i = 0; i < timeUpperBounds.Count; i++)
@@ -100,23 +100,32 @@ namespace YouTubeWrappedMVC.Helpers
                     TimeFrameName = timeCategoryNames[i],
                     TimeFrameTimes = timeCategoryBounds[i],
                     TimeWatched = timesWatched[i],
-                    PercentageOfTotal = Math.Round((timesWatched[i].TotalMinutes/totalTimeWatched)*100)+"%"
+                    PercentageOfTotal = Math.Round((timesWatched[i].TotalMinutes / totalTimeWatched) * 100) + "%"
                 });
             }
             viewModels = viewModels.OrderByDescending(vm => vm.TimeWatched).ToList();
+
+            using (StreamWriter sw = new StreamWriter(UriHelper.CALCULATIONS_OUTPUT_DIR + "/Times Most Frequently Watched - " + DateTime.Now.ToFileTime() + ".csv"))
+            {
+                foreach (var viewModel in viewModels)
+                {
+                    sw.WriteLine(viewModel.TimeFrameName + ";" + viewModel.TimeFrameTimes + ";" + Math.Round(viewModel.TimeWatched.TotalHours) + " Hours;" + viewModel.PercentageOfTotal);
+                }
+            }
+
             return viewModels;
         }
 
         // Get month with the most time watched
-        public List<MonthTimeWatchedViewModel> GetTimeWatchedPerMonth()
+        public List<TimeWatchedPerMonthViewModel> GetTimeWatchedPerMonth()
         {
             var monthViewModels = HistoryVideos.Select(v => new MonthYearViewModel(v.GetTime().Month, v.GetTime().Year)).Distinct().ToList();
             var monthlyHours = monthViewModels.Select(vm => HistoryVideos.Where(h => new MonthYearViewModel(h.GetTime().Month, h.GetTime().Year) == vm).Sum(v => VideoViewModelsDict[v.GetVideoID()].GetDuration().TotalHours)).ToList();
 
-            List<MonthTimeWatchedViewModel> viewModels = new List<MonthTimeWatchedViewModel>();
+            List<TimeWatchedPerMonthViewModel> viewModels = new List<TimeWatchedPerMonthViewModel>();
             for (int i = 0; i < monthViewModels.Count; i++)
             {
-                viewModels.Add(new MonthTimeWatchedViewModel(monthViewModels[i], Math.Round(monthlyHours[i])));
+                viewModels.Add(new TimeWatchedPerMonthViewModel(monthViewModels[i], Math.Round(monthlyHours[i])));
             }
 
             return viewModels.OrderByDescending(vm => vm.HoursWatched).ToList();
@@ -148,7 +157,7 @@ namespace YouTubeWrappedMVC.Helpers
         public double GetAverageDailyWatchTime()
         {
             var dates = HistoryVideos.Select(v => v.GetTime().Date).Distinct().ToList();
-            var dailyTimesMinutes = dates.Select(d => HistoryVideos.Where(h => h.GetTime().Date.Equals(d.Date)).Sum(v=> VideoViewModelsDict[v.GetVideoID()].GetDuration().TotalMinutes));
+            var dailyTimesMinutes = dates.Select(d => HistoryVideos.Where(h => h.GetTime().Date.Equals(d.Date)).Sum(v => VideoViewModelsDict[v.GetVideoID()].GetDuration().TotalMinutes));
             double averageTimeMinutes = dailyTimesMinutes.Average();
             double averageTimeHours = Math.Round(averageTimeMinutes / 60);
             return averageTimeHours;
