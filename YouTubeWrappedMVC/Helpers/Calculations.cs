@@ -119,8 +119,8 @@ namespace YouTubeWrappedMVC.Helpers
         // Get month with the most time watched
         public List<TimeWatchedPerMonthViewModel> GetTimeWatchedPerMonth()
         {
-            var monthViewModels = HistoryVideos.Select(v => new MonthYearViewModel(v.GetTime().Month, v.GetTime().Year)).Distinct().ToList();
-            var monthlyHours = monthViewModels.Select(vm => HistoryVideos.Where(h => new MonthYearViewModel(h.GetTime().Month, h.GetTime().Year) == vm).Sum(v => VideoViewModelsDict[v.GetVideoID()].GetDuration().TotalHours)).ToList();
+            List<MonthYearViewModel> monthViewModels = HistoryVideos.Select(v => new MonthYearViewModel(v.GetTime().Month, v.GetTime().Year)).GroupBy(vm => vm.Month+" "+vm.Year).Select(x => x.FirstOrDefault()).ToList();
+            List<double> monthlyHours = monthViewModels.Select(vm => HistoryVideos.Where(h => new MonthYearViewModel(h.GetTime().Month, h.GetTime().Year) == vm).Sum(v => VideoViewModelsDict[v.GetVideoID()].GetDuration().TotalHours)).ToList();
 
             List<TimeWatchedPerMonthViewModel> viewModels = new List<TimeWatchedPerMonthViewModel>();
             for (int i = 0; i < monthViewModels.Count; i++)

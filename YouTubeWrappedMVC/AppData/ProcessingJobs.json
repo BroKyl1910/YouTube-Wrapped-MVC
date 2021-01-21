@@ -1,0 +1,238 @@
+[
+  {
+    "JobId": "2b7b0bd1-b068-46d5-9c56-0275d873657e",
+    "HistoryContext": {
+      "StartDate": "2020-06-17T21:40:57.388+02:00",
+      "EndDate": "2021-01-11T15:48:34.8+02:00"
+    },
+    "TotalVideosWatched": 8364,
+    "TotalUniqueVideosWatched": 2618,
+    "MostViewedVideo": [
+      {
+        "VideoViewModel": {
+          "Id": "46IGAbJbykI",
+          "VideoTitle": "Miami 2017 (I've Seen the Lights Go Out on Broadway) (from Old Grey Whistle Test)",
+          "VideoUrl": "https://www.youtube.com/watch?v=46IGAbJbykI",
+          "Duration": "PT4M35S",
+          "VideoThumbnail": "https://i.ytimg.com/vi/46IGAbJbykI/default.jpg",
+          "ChannelTitle": "billyjoelVEVO",
+          "ChannelId": "UCELh-8oY4E5UBgapPGl5cAg"
+        },
+        "NumViews": 81
+      },
+      {
+        "VideoViewModel": {
+          "Id": "BC-n7HDGEeI",
+          "VideoTitle": "Billy Joel - Only the Good Die Young (from A Matter of Trust - The Bridge to Russia)",
+          "VideoUrl": "https://www.youtube.com/watch?v=BC-n7HDGEeI",
+          "Duration": "PT3M35S",
+          "VideoThumbnail": "https://i.ytimg.com/vi/BC-n7HDGEeI/default.jpg",
+          "ChannelTitle": "billyjoelVEVO",
+          "ChannelId": "UCELh-8oY4E5UBgapPGl5cAg"
+        },
+        "NumViews": 77
+      },
+      {
+        "VideoViewModel": {
+          "Id": "hRP1dF7Qlac",
+          "VideoTitle": "Billy Joel - Scenes from an Italian Restaurant (Live from Long Island)",
+          "VideoUrl": "https://www.youtube.com/watch?v=hRP1dF7Qlac",
+          "Duration": "PT7M18S",
+          "VideoThumbnail": "https://i.ytimg.com/vi/hRP1dF7Qlac/default.jpg",
+          "ChannelTitle": "billyjoelVEVO",
+          "ChannelId": "UCELh-8oY4E5UBgapPGl5cAg"
+        },
+        "NumViews": 77
+      },
+      {
+        "VideoViewModel": {
+          "Id": "Pm6hEU90G3A",
+          "VideoTitle": "Billy Joel - My Life (Live From The River Of Dreams Tour)",
+          "VideoUrl": "https://www.youtube.com/watch?v=Pm6hEU90G3A",
+          "Duration": "PT5M59S",
+          "VideoThumbnail": "https://i.ytimg.com/vi/Pm6hEU90G3A/default.jpg",
+          "ChannelTitle": "billyjoelVEVO",
+          "ChannelId": "UCELh-8oY4E5UBgapPGl5cAg"
+        },
+        "NumViews": 64
+      },
+      {
+        "VideoViewModel": {
+          "Id": "iM4LzEcaTK0",
+          "VideoTitle": "Billy Joel - New York State Of Mind (from Old Grey Whistle Test)",
+          "VideoUrl": "https://www.youtube.com/watch?v=iM4LzEcaTK0",
+          "Duration": "PT8M22S",
+          "VideoThumbnail": "https://i.ytimg.com/vi/iM4LzEcaTK0/default.jpg",
+          "ChannelTitle": "billyjoelVEVO",
+          "ChannelId": "UCELh-8oY4E5UBgapPGl5cAg"
+        },
+        "NumViews": 63
+      },
+      {
+        "VideoViewModel": {
+          "Id": "M7BliFKQ0bc",
+          "VideoTitle": "Billy Joel - Scenes from an Italian Restaurant (Live at Jazz Fest 2013)",
+          "VideoUrl": "https://www.youtube.com/watch?v=M7BliFKQ0bc",
+          "Duration": "PT8M56S",
+          "VideoThumbnail": "https://i.ytimg.com/vi/M7BliFKQ0bc/default.jpg",
+          "ChannelTitle": "billyjoelVEVO",
+          "ChannelId": "UCELh-8oY4E5UBgapPGl5cAg"
+        },
+        "NumViews": 61
+      },
+      {
+        "VideoViewModel": {
+          "Id": "7nfEYV7nWc0",
+          "VideoTitle": "Billy Joel - Movin' Out (Anthony's Song) (from Old Grey Whistle Test)",
+          "VideoUrl": "https://www.youtube.com/watch?v=7nfEYV7nWc0",
+          "Duration": "PT4M1S",
+          "VideoThumbnail": "https://i.ytimg.com/vi/7nfEYV7nWc0/default.jpg",
+          "ChannelTitle": "billyjoelVEVO",
+          "ChannelId": "UCELh-8oY4E5UBgapPGl5cAg"
+        },
+        "NumViews": 60
+      },
+      {
+        "VideoViewModel": {
+          "Id": "GkuJJsApACc",
+          "VideoTitle": "Billy Joel - Just The Way You Are (from Old Grey Whistle Test)",
+          "VideoUrl": "https://www.youtube.com/watch?v=GkuJJsApACc",
+          "Duration": "PT4M39S",
+          "VideoThumbnail": "https://i.ytimg.com/vi/GkuJJsApACc/default.jpg",
+          "ChannelTitle": "billyjoelVEVO",
+          "ChannelId": "UCELh-8oY4E5UBgapPGl5cAg"
+        },
+        "NumViews": 60
+      },
+      {
+        "VideoViewModel": {
+          "Id": "Tqm7-zN5s8k",
+          "VideoTitle": "Harry Styles Covers Peter Gabriel’s “Sledgehammer” Live on the Howard Stern Show",
+          "VideoUrl": "https://www.youtube.com/watch?v=Tqm7-zN5s8k",
+          "Duration": "PT5M37S",
+          "VideoThumbnail": "https://i.ytimg.com/vi/Tqm7-zN5s8k/default.jpg",
+          "ChannelTitle": "The Howard Stern Show",
+          "ChannelId": "UCENdrrK5sWM-RV5nTLwBNXw"
+        },
+        "NumViews": 57
+      },
+      {
+        "VideoViewModel": {
+          "Id": "REfO518wnuE",
+          "VideoTitle": "Billy Joel - Big Man on Mulberry Street (from A Matter of Trust - The Bridge to Russia)",
+          "VideoUrl": "https://www.youtube.com/watch?v=REfO518wnuE",
+          "Duration": "PT7M4S",
+          "VideoThumbnail": "https://i.ytimg.com/vi/REfO518wnuE/default.jpg",
+          "ChannelTitle": "billyjoelVEVO",
+          "ChannelId": "UCELh-8oY4E5UBgapPGl5cAg"
+        },
+        "NumViews": 54
+      }
+    ],
+    "TotalUniqueChannelsWatched": 768,
+    "TimeWatchedPerMonthViewModel": [
+      {
+        "MonthYearViewModel": { "Month": 12, "Year": 2020 },
+        "HoursWatched": 542.0
+      },
+      {
+        "MonthYearViewModel": { "Month": 11, "Year": 2020 },
+        "HoursWatched": 430.0
+      },
+      {
+        "MonthYearViewModel": { "Month": 10, "Year": 2020 },
+        "HoursWatched": 246.0
+      },
+      {
+        "MonthYearViewModel": { "Month": 1, "Year": 2021 },
+        "HoursWatched": 234.0
+      },
+      {
+        "MonthYearViewModel": { "Month": 9, "Year": 2020 },
+        "HoursWatched": 152.0
+      },
+      {
+        "MonthYearViewModel": { "Month": 7, "Year": 2020 },
+        "HoursWatched": 129.0
+      },
+      {
+        "MonthYearViewModel": { "Month": 8, "Year": 2020 },
+        "HoursWatched": 126.0
+      },
+      {
+        "MonthYearViewModel": { "Month": 6, "Year": 2020 },
+        "HoursWatched": 72.0
+      }
+    ],
+    "AverageDailyWatchTime": 9.0,
+    "AverageVideoLength": 14.0,
+    "TimeWatchedPerTimeframe": [
+      {
+        "TimeFrameName": "Late Evening",
+        "TimeFrameTimes": "Between 9pm and 12am",
+        "TimeWatched": "18.13:37:45",
+        "PercentageOfTotal": "23%"
+      },
+      {
+        "TimeFrameName": "Midday",
+        "TimeFrameTimes": "Between 10am and 2pm",
+        "TimeWatched": "14.05:40:23",
+        "PercentageOfTotal": "18%"
+      },
+      {
+        "TimeFrameName": "Early Evening",
+        "TimeFrameTimes": "Between 5pm and 9pm",
+        "TimeWatched": "14.02:09:39",
+        "PercentageOfTotal": "18%"
+      },
+      {
+        "TimeFrameName": "Night Owl Hours",
+        "TimeFrameTimes": "Between 12am and 4am",
+        "TimeWatched": "11.19:35:26",
+        "PercentageOfTotal": "15%"
+      },
+      {
+        "TimeFrameName": "Late Afternoon",
+        "TimeFrameTimes": "Between 2pm and 5pm",
+        "TimeWatched": "10.23:40:22",
+        "PercentageOfTotal": "14%"
+      },
+      {
+        "TimeFrameName": "Early Morning",
+        "TimeFrameTimes": "Between 7am and 10am",
+        "TimeWatched": "5.15:03:02",
+        "PercentageOfTotal": "7%"
+      },
+      {
+        "TimeFrameName": "Crack of Dawn",
+        "TimeFrameTimes": "Between 4am and 7am",
+        "TimeWatched": "5.03:10:04",
+        "PercentageOfTotal": "6%"
+      }
+    ],
+    "ViewsPerChannel": [
+      { "ChannelName": "billyjoelVEVO", "NumVideos": 1937 },
+      { "ChannelName": "ShawnMendesVEVO", "NumVideos": 323 },
+      { "ChannelName": "stevierayvaughnVEVO", "NumVideos": 165 },
+      { "ChannelName": "H3 Podcast", "NumVideos": 158 },
+      { "ChannelName": "JustinBieberVEVO", "NumVideos": 154 },
+      { "ChannelName": "HarryStylesVEVO", "NumVideos": 146 },
+      { "ChannelName": "NPR Music", "NumVideos": 144 },
+      { "ChannelName": "JBiebersocute", "NumVideos": 114 },
+      { "ChannelName": "Disguised Toast", "NumVideos": 103 },
+      { "ChannelName": "EltonJohnVEVO", "NumVideos": 99 }
+    ],
+    "TimeWatchedPerChannel": [
+      { "ChannelName": "H3 Podcast", "TimeWatched": "13.18:51:02" },
+      { "ChannelName": "billyjoelVEVO", "TimeWatched": "7.03:15:22" },
+      { "ChannelName": "moresimsie", "TimeWatched": "5.03:36:01" },
+      { "ChannelName": "PewDiePie", "TimeWatched": "4.00:20:30" },
+      { "ChannelName": "Anthony Caliber", "TimeWatched": "3.06:36:18" },
+      { "ChannelName": "Disguised Toast", "TimeWatched": "1.21:24:40" },
+      { "ChannelName": "NPR Music", "TimeWatched": "1.18:15:00" },
+      { "ChannelName": "Sotus", "TimeWatched": "1.07:55:18" },
+      { "ChannelName": "Luke Stephens", "TimeWatched": "1.06:39:04" },
+      { "ChannelName": "lilsimsie", "TimeWatched": "1.05:49:20" }
+    ]
+  }
+]

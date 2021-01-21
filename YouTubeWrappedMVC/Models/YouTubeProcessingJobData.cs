@@ -5,8 +5,9 @@ using System.Threading.Tasks;
 
 namespace YouTubeWrappedMVC.Models
 {
-    public class YouTubeProcessingJob
+    public class YouTubeProcessingJobData
     {
+        public string JobId { get; set; }
         public HistoryContext HistoryContext { get; set; }
         public int TotalVideosWatched { get; set; }
         public int TotalUniqueVideosWatched { get; set; }
