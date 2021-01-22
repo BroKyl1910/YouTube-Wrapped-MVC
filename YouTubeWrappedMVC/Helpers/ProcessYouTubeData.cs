@@ -128,7 +128,7 @@ namespace YouTubeWrappedMVC.Helpers
             if (pastSearchesDict.Count == 0)
             {
 
-                using (StreamReader streamReader = new StreamReader(UriHelper.PAST_SEARCHES_FILE_URI))
+                using (StreamReader streamReader = new StreamReader(UriHelper.PAST_CHANNEL_SEARCHES_FILE_URI))
                 {
                     string line = streamReader.ReadLine();
                     while (line != null)
@@ -145,7 +145,7 @@ namespace YouTubeWrappedMVC.Helpers
 
         private async Task WriteVideoViewModelToFile(VideoViewModel viewModel)
         {
-            using (StreamWriter sw = new StreamWriter(UriHelper.PAST_SEARCHES_FILE_URI, true))
+            using (StreamWriter sw = new StreamWriter(UriHelper.PAST_CHANNEL_SEARCHES_FILE_URI, true))
             {
                 await sw.WriteLineAsync(VideoViewModel.SerializeObject(viewModel));
             }

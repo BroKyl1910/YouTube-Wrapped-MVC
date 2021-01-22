@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using YouTubeWrappedMVC.Models;
+using YouTubeWrappedMVC.Models.ApiChannel;
 
 namespace YouTubeWrappedMVC.Helpers
 {
@@ -30,9 +31,10 @@ namespace YouTubeWrappedMVC.Helpers
 
             }
         }
-        public static async Task<ApiVideo> GetChannelDataFromApi(string channelId)
+
+        public static async Task<ApiChannel> GetChannelDataFromApi(string channelId)
         {
-            Uri uri = new Uri(@"https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails&id=" + channelId + "&key=AIzaSyDYJH4akcKKjhWuxJKbs3dIl_56dk6masM");
+            Uri uri = new Uri(@"https://youtube.googleapis.com/youtube/v3/channels?part=snippet,brandingSettings&id=" + channelId + "&key=AIzaSyDYJH4akcKKjhWuxJKbs3dIl_56dk6masM");
 
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(uri);
             request.AutomaticDecompression = DecompressionMethods.GZip;
@@ -44,8 +46,8 @@ namespace YouTubeWrappedMVC.Helpers
             using (StreamReader reader = new StreamReader(stream))
             {
                 responseString = reader.ReadToEnd();
-                ApiVideo apiVideo = JsonConvert.DeserializeObject<ApiVideo>(responseString);
-                return apiVideo;
+                ApiChannel apiChannel = JsonConvert.DeserializeObject<ApiChannel>(responseString);
+                return apiChannel;
 
             }
         }
