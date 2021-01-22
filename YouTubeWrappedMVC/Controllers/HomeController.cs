@@ -23,7 +23,7 @@ namespace YouTubeWrappedMVC.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        //[ValidateAntiForgeryToken]
         public string Index([FromServices] TaskQueue taskQueue, [FromForm] IFormFile file, string email)
         {
             try

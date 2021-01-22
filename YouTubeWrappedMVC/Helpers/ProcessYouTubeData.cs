@@ -12,7 +12,6 @@ namespace YouTubeWrappedMVC.Helpers
 {
     public class ProcessYouTubeData
     {
-        private static Dictionary<string, VideoViewModel> pastSearchesDict = new Dictionary<string, VideoViewModel>();
 
         public async Task Initialise(string jobId, string takeoutDataJson, string emailAddress)
         {
@@ -33,13 +32,14 @@ namespace YouTubeWrappedMVC.Helpers
             System.Diagnostics.Debug.WriteLine("Starting");
             List<HistoryVideo> historyVideos = GetHistoryFromJson(takeoutDataJson).ToList();
             System.Diagnostics.Debug.WriteLine("Fetching video data");
-            Dictionary<string, VideoViewModel> videoViewModelsDict = await GetVideosFromApi(historyVideos.Take(5000).ToList());
+
+            Dictionary<string, VideoViewModel> videoViewModelsDict = await YouTubeApiHelper.GetInstance().GetVideos(historyVideos.Take(5000).ToList());
             System.Diagnostics.Debug.WriteLine("Doing calculations");
 
             jobStatus.JobStatus = JobStatus.PROCESSING;
             fileDataHelper.SaveJobStatus(jobStatus);
 
-            YouTubeProcessingJobData processingJobData = PerformCalculations(jobId, historyVideos, videoViewModelsDict);
+            YouTubeProcessingJobData processingJobData = await PerformCalculations(jobId, historyVideos, videoViewModelsDict);
             fileDataHelper.SaveProcessingJob(processingJobData);
 
             jobStatus.JobStatus = JobStatus.COMPLETED;
@@ -66,7 +66,7 @@ namespace YouTubeWrappedMVC.Helpers
             System.Diagnostics.Debug.WriteLine("Completed in "+elapsedTime);
         }
 
-        private YouTubeProcessingJobData PerformCalculations(string jobId, List<HistoryVideo> historyVideos, Dictionary<string, VideoViewModel> videoViewModelsDict)
+        private async Task<YouTubeProcessingJobData> PerformCalculations(string jobId, List<HistoryVideo> historyVideos, Dictionary<string, VideoViewModel> videoViewModelsDict)
         {
             Calculations calculations = new Calculations(historyVideos, videoViewModelsDict);
 
@@ -82,73 +82,11 @@ namespace YouTubeWrappedMVC.Helpers
                 AverageDailyWatchTime = calculations.GetAverageDailyWatchTime(),
                 AverageVideoLength = calculations.GetAverageLengthOfVideo(),
                 TimeWatchedPerTimeframe = calculations.GetHoursMostFrequentlyWatched(),
-                ViewsPerChannel = calculations.GetMostViewedChannel().Take(10).ToList(),
-                TimeWatchedPerChannel = calculations.GetMostTimeChannel().Take(10).ToList(),
+                ViewsPerChannel = await calculations.GetMostViewedChannel(),
+                TimeWatchedPerChannel = await calculations.GetMostTimeChannel(),
             };
 
             return job;
-        }
-
-        private async Task<Dictionary<string, VideoViewModel>> GetVideosFromApi(List<HistoryVideo> historyVideos)
-        {
-            PopulatePastSearchesDict();
-            Dictionary<string, VideoViewModel> apiVideosDict = new Dictionary<string, VideoViewModel>();
-
-            foreach (var historyVideo in historyVideos)
-            {
-                string id = historyVideo.GetVideoID();
-
-                if (!apiVideosDict.ContainsKey(id))
-                {
-                    if (pastSearchesDict.ContainsKey(id))
-                    {
-                        apiVideosDict.Add(id, pastSearchesDict[id]);
-                    }
-                    else
-                    {
-                        ApiVideo apiVideo = await YouTubeApiHelper.GetVideoDataFromApi(id);
-                        if (apiVideo.Items.Length > 0)
-                        {
-                            VideoViewModel viewModel = VideoViewModel.FromApiVideo(apiVideo);
-                            await WriteVideoViewModelToFile(viewModel);
-                            apiVideosDict.Add(id, viewModel);
-                            pastSearchesDict.Add(id, viewModel);
-                        }
-
-                    }
-                }
-
-            }
-
-            return apiVideosDict;
-        }
-
-        private void PopulatePastSearchesDict()
-        {
-            if (pastSearchesDict.Count == 0)
-            {
-
-                using (StreamReader streamReader = new StreamReader(UriHelper.PAST_CHANNEL_SEARCHES_FILE_URI))
-                {
-                    string line = streamReader.ReadLine();
-                    while (line != null)
-                    {
-                        VideoViewModel viewModel = VideoViewModel.DeserializeObject(line);
-                        pastSearchesDict.Add(viewModel.Id, viewModel);
-                        line = streamReader.ReadLine();
-                    }
-                }
-            }
-
-
-        }
-
-        private async Task WriteVideoViewModelToFile(VideoViewModel viewModel)
-        {
-            using (StreamWriter sw = new StreamWriter(UriHelper.PAST_CHANNEL_SEARCHES_FILE_URI, true))
-            {
-                await sw.WriteLineAsync(VideoViewModel.SerializeObject(viewModel));
-            }
         }
 
 

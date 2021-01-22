@@ -105,13 +105,13 @@ namespace YouTubeWrappedMVC.Helpers
             }
             viewModels = viewModels.OrderByDescending(vm => vm.TimeWatched).ToList();
 
-            using (StreamWriter sw = new StreamWriter(UriHelper.CALCULATIONS_OUTPUT_DIR + "/Times Most Frequently Watched - " + DateTime.Now.ToFileTime() + ".csv"))
-            {
-                foreach (var viewModel in viewModels)
-                {
-                    sw.WriteLine(viewModel.TimeFrameName + ";" + viewModel.TimeFrameTimes + ";" + Math.Round(viewModel.TimeWatched.TotalHours) + " Hours;" + viewModel.PercentageOfTotal);
-                }
-            }
+            //using (StreamWriter sw = new StreamWriter(UriHelper.CALCULATIONS_OUTPUT_DIR + "/Times Most Frequently Watched - " + DateTime.Now.ToFileTime() + ".csv"))
+            //{
+            //    foreach (var viewModel in viewModels)
+            //    {
+            //        sw.WriteLine(viewModel.TimeFrameName + ";" + viewModel.TimeFrameTimes + ";" + Math.Round(viewModel.TimeWatched.TotalHours) + " Hours;" + viewModel.PercentageOfTotal);
+            //    }
+            //}
 
             return viewModels;
         }
@@ -210,13 +210,13 @@ namespace YouTubeWrappedMVC.Helpers
             }
 
 
-            using (StreamWriter sw = new StreamWriter(UriHelper.CALCULATIONS_OUTPUT_DIR + "/Hours Per Day - " + DateTime.Now.ToFileTime() + ".csv"))
-            {
-                foreach (var viewModel in hoursPerDayViewModels)
-                {
-                    sw.WriteLine(viewModel.Date.ToShortDateString() + ";" + viewModel.HoursWatched.Hours + " Hours, " + viewModel.HoursWatched.Minutes + " Minutes and " + viewModel.HoursWatched.Seconds + " Seconds");
-                }
-            }
+            //using (StreamWriter sw = new StreamWriter(UriHelper.CALCULATIONS_OUTPUT_DIR + "/Hours Per Day - " + DateTime.Now.ToFileTime() + ".csv"))
+            //{
+            //    foreach (var viewModel in hoursPerDayViewModels)
+            //    {
+            //        sw.WriteLine(viewModel.Date.ToShortDateString() + ";" + viewModel.HoursWatched.Hours + " Hours, " + viewModel.HoursWatched.Minutes + " Minutes and " + viewModel.HoursWatched.Seconds + " Seconds");
+            //    }
+            //}
 
             return hoursPerDayViewModels;
         }
@@ -238,36 +238,36 @@ namespace YouTubeWrappedMVC.Helpers
             }
 
             viewsPerVideoViewModels = viewsPerVideoViewModels.OrderByDescending(vm => vm.NumViews).ToList();
-            using (StreamWriter sw = new StreamWriter(UriHelper.CALCULATIONS_OUTPUT_DIR + "/Views Per Video - " + DateTime.Now.ToFileTime() + ".csv"))
-            {
-                foreach (var viewModel in viewsPerVideoViewModels)
-                {
-                    sw.WriteLine(viewModel.VideoViewModel.VideoTitle + ";" + viewModel.NumViews);
-                }
-            }
+            //using (StreamWriter sw = new StreamWriter(UriHelper.CALCULATIONS_OUTPUT_DIR + "/Views Per Video - " + DateTime.Now.ToFileTime() + ".csv"))
+            //{
+            //    foreach (var viewModel in viewsPerVideoViewModels)
+            //    {
+            //        sw.WriteLine(viewModel.VideoViewModel.VideoTitle + ";" + viewModel.NumViews);
+            //    }
+            //}
 
-            return viewsPerVideoViewModels;
+            return viewsPerVideoViewModels.Take(10).ToList();
         }
 
         // Calculate most viewed channel
-        public List<ViewsPerChannelViewModel> GetMostViewedChannel()
+        public async Task<List<ViewsPerChannelViewModel>> GetMostViewedChannel()
         {
-            var channelTitles = new List<string>();
+            var channelIds = new List<string>();
             var numVideosWatched = new List<int>();
             foreach (var video in HistoryVideos)
             {
 
-                channelTitles.Add(VideoViewModelsDict[video.GetVideoID()].ChannelTitle);
+                channelIds.Add(VideoViewModelsDict[video.GetVideoID()].ChannelId);
 
             }
 
-            channelTitles = channelTitles.Distinct().ToList();
-            foreach (var channelTitle in channelTitles)
+            channelIds = channelIds.Distinct().ToList();
+            foreach (var channelId in channelIds)
             {
                 int numVids = 0;
                 foreach (HistoryVideo historyVideo in HistoryVideos)
                 {
-                    if (VideoViewModelsDict[historyVideo.GetVideoID()].ChannelTitle == channelTitle)
+                    if (VideoViewModelsDict[historyVideo.GetVideoID()].ChannelId == channelId)
                     {
                         numVids++;
                     }
@@ -277,47 +277,57 @@ namespace YouTubeWrappedMVC.Helpers
                 numVids = 0;
             }
 
+            var channelIdsArr = channelIds.ToArray();
+            var numVideosWatchedArr = numVideosWatched.ToArray();
+
+            Array.Sort(numVideosWatchedArr, channelIdsArr);
+            Array.Reverse(numVideosWatchedArr);
+            Array.Reverse(channelIdsArr);
+
+            channelIds = channelIdsArr.Take(10).ToList();
+            numVideosWatched = numVideosWatchedArr.Take(10).ToList();
+
             List<ViewsPerChannelViewModel> viewsPerChannelViewModels = new List<ViewsPerChannelViewModel>();
-            for (int i = 0; i < channelTitles.Count; i++)
+            for (int i = 0; i < channelIds.Count; i++)
             {
 
                 viewsPerChannelViewModels.Add(new ViewsPerChannelViewModel()
                 {
-                    ChannelName = channelTitles[i],
+                    Channel = await YouTubeApiHelper.GetInstance().GetChannel(channelIds[i]),
                     NumVideos = numVideosWatched[i]
                 });
 
             }
 
             viewsPerChannelViewModels = viewsPerChannelViewModels.OrderByDescending(vm => vm.NumVideos).ToList();
-            using (StreamWriter sw = new StreamWriter(UriHelper.CALCULATIONS_OUTPUT_DIR + "/Views Per Channel - " + DateTime.Now.ToFileTime() + ".csv"))
-            {
-                foreach (var viewModel in viewsPerChannelViewModels)
-                {
-                    sw.WriteLine(viewModel.ChannelName + ";" + viewModel.NumVideos);
-                }
-            }
+            //using (StreamWriter sw = new StreamWriter(UriHelper.CALCULATIONS_OUTPUT_DIR + "/Views Per Channel - " + DateTime.Now.ToFileTime() + ".csv"))
+            //{
+            //    foreach (var viewModel in viewsPerChannelViewModels)
+            //    {
+            //        sw.WriteLine(viewModel.Channel + ";" + viewModel.NumVideos);
+            //    }
+            //}
 
             return viewsPerChannelViewModels;
         }
 
         // Calculate most viewed channel
-        public List<TimePerChannelViewModel> GetMostTimeChannel()
+        public async Task<List<TimePerChannelViewModel>> GetMostTimeChannel()
         {
-            var channelTitles = new List<string>();
+            var channelIds = new List<string>();
             var timeWatched = new List<TimeSpan>();
             foreach (var video in HistoryVideos)
             {
-                channelTitles.Add(VideoViewModelsDict[video.GetVideoID()].ChannelTitle);
+                channelIds.Add(VideoViewModelsDict[video.GetVideoID()].ChannelId);
             }
 
-            channelTitles = channelTitles.Distinct().ToList();
-            foreach (var channelTitle in channelTitles)
+            channelIds = channelIds.Distinct().ToList();
+            foreach (var channelId in channelIds)
             {
                 TimeSpan time = new TimeSpan(0, 0, 0);
                 foreach (HistoryVideo historyVideo in HistoryVideos)
                 {
-                    if (VideoViewModelsDict[historyVideo.GetVideoID()].ChannelTitle == channelTitle)
+                    if (VideoViewModelsDict[historyVideo.GetVideoID()].ChannelId == channelId)
                     {
                         time = time.Add(VideoViewModelsDict[historyVideo.GetVideoID()].GetDuration());
                     }
@@ -326,28 +336,37 @@ namespace YouTubeWrappedMVC.Helpers
                 time = new TimeSpan(0, 0, 0);
             }
 
+            var channelIdsArr = channelIds.ToArray();
+            var timeWatchedArr = timeWatched.ToArray();
+
+            Array.Sort(timeWatchedArr, channelIdsArr);
+            Array.Reverse(timeWatchedArr);
+            Array.Reverse(channelIdsArr);
+
+            channelIds = channelIdsArr.Take(10).ToList();
+            timeWatched = timeWatchedArr.Take(10).ToList();
+
             List<TimePerChannelViewModel> timePerChannelViewModels = new List<TimePerChannelViewModel>();
-            for (int i = 0; i < channelTitles.Count; i++)
+            for (int i = 0; i < channelIds.Count; i++)
             {
 
                 timePerChannelViewModels.Add(new TimePerChannelViewModel()
                 {
-                    ChannelName = channelTitles[i],
+                    Channel = await YouTubeApiHelper.GetInstance().GetChannel(channelIds[i]),
                     TimeWatched = timeWatched[i]
                 });
 
             }
 
             timePerChannelViewModels = timePerChannelViewModels.OrderByDescending(vm => vm.TimeWatched).ToList();
-            using (StreamWriter sw = new StreamWriter(UriHelper.CALCULATIONS_OUTPUT_DIR + "/Time Watched Per Channel - " + DateTime.Now.ToFileTime() + ".csv"))
-            {
-                foreach (var viewModel in timePerChannelViewModels)
-                {
-                    //sw.WriteLine(viewModel.ChannelName + ";" + viewModel.TimeWatched.TotalHours + " Hours " + viewModel.TimeWatched.Minutes + " Minutes and " + viewModel.TimeWatched.Seconds + " Seconds");
-                    sw.WriteLine(viewModel.ChannelName + ";" + Math.Round(viewModel.TimeWatched.TotalHours) + " Hours (" + Math.Round(viewModel.TimeWatched.TotalHours * 60) + " minutes)");
+            //using (StreamWriter sw = new StreamWriter(UriHelper.CALCULATIONS_OUTPUT_DIR + "/Time Watched Per Channel - " + DateTime.Now.ToFileTime() + ".csv"))
+            //{
+            //    foreach (var viewModel in timePerChannelViewModels)
+            //    {
+            //        sw.WriteLine(viewModel.Channel + ";" + Math.Round(viewModel.TimeWatched.TotalHours) + " Hours (" + Math.Round(viewModel.TimeWatched.TotalHours * 60) + " minutes)");
 
-                }
-            }
+            //    }
+            //}
 
             return timePerChannelViewModels;
         }

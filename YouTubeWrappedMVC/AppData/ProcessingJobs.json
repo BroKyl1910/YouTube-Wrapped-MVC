@@ -1,6 +1,6 @@
 [
   {
-    "JobId": "2b7b0bd1-b068-46d5-9c56-0275d873657e",
+    "JobId": "2f273f6d-0c92-4f1b-a655-19ce951f5605",
     "HistoryContext": {
       "StartDate": "2020-06-17T21:40:57.388+02:00",
       "EndDate": "2021-01-11T15:48:34.8+02:00"
@@ -132,35 +132,59 @@
     "TotalUniqueChannelsWatched": 768,
     "TimeWatchedPerMonthViewModel": [
       {
-        "MonthYearViewModel": { "Month": 12, "Year": 2020 },
+        "MonthYearViewModel": {
+          "Month": 12,
+          "Year": 2020
+        },
         "HoursWatched": 542.0
       },
       {
-        "MonthYearViewModel": { "Month": 11, "Year": 2020 },
+        "MonthYearViewModel": {
+          "Month": 11,
+          "Year": 2020
+        },
         "HoursWatched": 430.0
       },
       {
-        "MonthYearViewModel": { "Month": 10, "Year": 2020 },
+        "MonthYearViewModel": {
+          "Month": 10,
+          "Year": 2020
+        },
         "HoursWatched": 246.0
       },
       {
-        "MonthYearViewModel": { "Month": 1, "Year": 2021 },
+        "MonthYearViewModel": {
+          "Month": 1,
+          "Year": 2021
+        },
         "HoursWatched": 234.0
       },
       {
-        "MonthYearViewModel": { "Month": 9, "Year": 2020 },
+        "MonthYearViewModel": {
+          "Month": 9,
+          "Year": 2020
+        },
         "HoursWatched": 152.0
       },
       {
-        "MonthYearViewModel": { "Month": 7, "Year": 2020 },
+        "MonthYearViewModel": {
+          "Month": 7,
+          "Year": 2020
+        },
         "HoursWatched": 129.0
       },
       {
-        "MonthYearViewModel": { "Month": 8, "Year": 2020 },
+        "MonthYearViewModel": {
+          "Month": 8,
+          "Year": 2020
+        },
         "HoursWatched": 126.0
       },
       {
-        "MonthYearViewModel": { "Month": 6, "Year": 2020 },
+        "MonthYearViewModel": {
+          "Month": 6,
+          "Year": 2020
+        },
         "HoursWatched": 72.0
       }
     ],
@@ -211,28 +235,208 @@
       }
     ],
     "ViewsPerChannel": [
-      { "ChannelName": "billyjoelVEVO", "NumVideos": 1937 },
-      { "ChannelName": "ShawnMendesVEVO", "NumVideos": 323 },
-      { "ChannelName": "stevierayvaughnVEVO", "NumVideos": 165 },
-      { "ChannelName": "H3 Podcast", "NumVideos": 158 },
-      { "ChannelName": "JustinBieberVEVO", "NumVideos": 154 },
-      { "ChannelName": "HarryStylesVEVO", "NumVideos": 146 },
-      { "ChannelName": "NPR Music", "NumVideos": 144 },
-      { "ChannelName": "JBiebersocute", "NumVideos": 114 },
-      { "ChannelName": "Disguised Toast", "NumVideos": 103 },
-      { "ChannelName": "EltonJohnVEVO", "NumVideos": 99 }
+      {
+        "Channel": {
+          "Id": "UCELh-8oY4E5UBgapPGl5cAg",
+          "ChannelTitle": "billyjoelVEVO",
+          "ChannelUrl": "https://www.youtube.com/channel/UCELh-8oY4E5UBgapPGl5cAg",
+          "ChannelThumbnail": "https://yt3.ggpht.com/ytc/AAUvwnikrXHKLkWFqPXJMgthDSpJZ2N3WDSSndvARqsFHw=s88-c-k-c0x00ffffff-no-rj-mo",
+          "ChannelBanner": "https://lh3.googleusercontent.com/yr3k1Q4EdrY1q4ozeo9LIZaIqUWSUxEZlWEKSdgQbvfmswDSMq-Br23mBcV1IOGJaJcA_R_EtZQ"
+        },
+        "NumVideos": 1937
+      },
+      {
+        "Channel": {
+          "Id": "UC4-TgOSMJHn-LtY4zCzbQhw",
+          "ChannelTitle": "ShawnMendesVEVO",
+          "ChannelUrl": "https://www.youtube.com/channel/UC4-TgOSMJHn-LtY4zCzbQhw",
+          "ChannelThumbnail": "https://yt3.ggpht.com/ytc/AAUvwngoPpLmQdBbBD-3FGswobo8lNq8-lO51EaBBiuRUg=s88-c-k-c0x00ffffff-no-rj-mo",
+          "ChannelBanner": "https://yt3.ggpht.com/btyUFxclFNFYPmpCblSeVWUb1Y-APfsxy8PNYswG3NECSIX4ld8W33cPr7PCQPhWCRjGMtjt"
+        },
+        "NumVideos": 323
+      },
+      {
+        "Channel": {
+          "Id": "UCX25kfBbEN1MNEPtlNLOycw",
+          "ChannelTitle": "stevierayvaughnVEVO",
+          "ChannelUrl": "https://www.youtube.com/channel/UCX25kfBbEN1MNEPtlNLOycw",
+          "ChannelThumbnail": "https://yt3.ggpht.com/ytc/AAUvwniySJDoRSZgVTD3whSZH53cUBHgzrB3KMTMlQ=s88-c-k-c0x00ffffff-no-rj-mo",
+          "ChannelBanner": ""
+        },
+        "NumVideos": 165
+      },
+      {
+        "Channel": {
+          "Id": "UCLtREJY21xRfCuEKvdki1Kw",
+          "ChannelTitle": "H3 Podcast",
+          "ChannelUrl": "https://www.youtube.com/channel/UCLtREJY21xRfCuEKvdki1Kw",
+          "ChannelThumbnail": "https://yt3.ggpht.com/ytc/AAUvwnib0WzVK8NfOEjfdoBJN3o1ffAuT5xTJQ9TIrtYig=s88-c-k-c0x00ffffff-no-rj",
+          "ChannelBanner": "https://yt3.ggpht.com/ZnKR8bI4sXNiHK9afp2Y1TgqnCar6n6xcKcyengFV6ja-Q19tPLap5mjtdGTl1Nk6bgSbAGheDk"
+        },
+        "NumVideos": 158
+      },
+      {
+        "Channel": {
+          "Id": "UCHkj014U2CQ2Nv0UZeYpE_A",
+          "ChannelTitle": "JustinBieberVEVO",
+          "ChannelUrl": "https://www.youtube.com/channel/UCHkj014U2CQ2Nv0UZeYpE_A",
+          "ChannelThumbnail": "https://yt3.ggpht.com/ytc/AAUvwnjikPqZQLCLO0Dpiekl_ZkNcSB-1HMCy1Rz_f2UiA=s88-c-k-c0x00ffffff-no-rj-mo",
+          "ChannelBanner": "https://yt3.ggpht.com/NUxZLMqsGdorwU4XEgT1HRMpSIZ9E8S-HKQIZ1BVLmWbtUHIGd4NW3ex3uo8AB6is9d2BX5M"
+        },
+        "NumVideos": 154
+      },
+      {
+        "Channel": {
+          "Id": "UCbOCbp5gXL8jigIBZLqMPrw",
+          "ChannelTitle": "HarryStylesVEVO",
+          "ChannelUrl": "https://www.youtube.com/channel/UCbOCbp5gXL8jigIBZLqMPrw",
+          "ChannelThumbnail": "https://yt3.ggpht.com/ytc/AAUvwnhR81ocC_KalYEk5ItnJcfMBqaiIpuM1B0lJyg4Rw=s88-c-k-c0x00ffffff-no-rj-mo",
+          "ChannelBanner": "https://yt3.ggpht.com/2MxtYomco-wy_VWcc0GesQcWPFqHXMxD6IhtiBLL_uZBpWenwOI_uN97xTjMfOu9n9O57EiSFQ0"
+        },
+        "NumVideos": 146
+      },
+      {
+        "Channel": {
+          "Id": "UC4eYXhJI4-7wSWc8UNRwD4A",
+          "ChannelTitle": "NPR Music",
+          "ChannelUrl": "https://www.youtube.com/channel/UC4eYXhJI4-7wSWc8UNRwD4A",
+          "ChannelThumbnail": "https://yt3.ggpht.com/ytc/AAUvwnjPJKGZ1p7nP6zDTOZM7jFDmcvV7GpOWHi0pxUGgw=s88-c-k-c0x00ffffff-no-rj",
+          "ChannelBanner": "https://yt3.ggpht.com/WyN8qb_2-y8e8VnGi3MZKt_Q41mYlo4aFhGVjvHsvF7wTKZSRadLwxbBXWF1lSw8acBdAVsMur4"
+        },
+        "NumVideos": 144
+      },
+      {
+        "Channel": {
+          "Id": "UC0tm7HQQIO8J6QbnzjWrvgw",
+          "ChannelTitle": "JBiebersocute",
+          "ChannelUrl": "https://www.youtube.com/channel/UC0tm7HQQIO8J6QbnzjWrvgw",
+          "ChannelThumbnail": "https://yt3.ggpht.com/ytc/AAUvwng9365GINjTtXaa5ax_TqPz15x-pI71kQTG5w=s88-c-k-c0x00ffffff-no-rj",
+          "ChannelBanner": ""
+        },
+        "NumVideos": 114
+      },
+      {
+        "Channel": {
+          "Id": "UCUT8RoNBTJvwW1iErP6-b-A",
+          "ChannelTitle": "Disguised Toast",
+          "ChannelUrl": "https://www.youtube.com/channel/UCUT8RoNBTJvwW1iErP6-b-A",
+          "ChannelThumbnail": "https://yt3.ggpht.com/ytc/AAUvwngJq4alJXv_W0PICJWA0owR_Hk2UIzS7-Qkizm-Sw=s88-c-k-c0x00ffffff-no-rj",
+          "ChannelBanner": "https://lh3.googleusercontent.com/s1-v8H2C4CfNlZdQ4VAkNpVlHHlyqZdZR7Fudxk9sGChhrtRgiuS3jfNI6Pz0arFnyPHB7G5"
+        },
+        "NumVideos": 103
+      },
+      {
+        "Channel": {
+          "Id": "UCI8Ry7NdFNLel-S8dWU7mDA",
+          "ChannelTitle": "EltonJohnVEVO",
+          "ChannelUrl": "https://www.youtube.com/channel/UCI8Ry7NdFNLel-S8dWU7mDA",
+          "ChannelThumbnail": "https://yt3.ggpht.com/ytc/AAUvwnhBALr-EZ6fEb565Ud7uxbd9d9kR2hJ68kiSgv15w=s88-c-k-c0x00ffffff-no-rj-mo",
+          "ChannelBanner": "https://lh3.googleusercontent.com/DEoYY6FMzFmSD8BxkVfz-n3iLN-g0wJdZ2I3XAyfkQR8U7mR23_Ns1jF03SkWHSFNPvh_2Ba"
+        },
+        "NumVideos": 99
+      }
     ],
     "TimeWatchedPerChannel": [
-      { "ChannelName": "H3 Podcast", "TimeWatched": "13.18:51:02" },
-      { "ChannelName": "billyjoelVEVO", "TimeWatched": "7.03:15:22" },
-      { "ChannelName": "moresimsie", "TimeWatched": "5.03:36:01" },
-      { "ChannelName": "PewDiePie", "TimeWatched": "4.00:20:30" },
-      { "ChannelName": "Anthony Caliber", "TimeWatched": "3.06:36:18" },
-      { "ChannelName": "Disguised Toast", "TimeWatched": "1.21:24:40" },
-      { "ChannelName": "NPR Music", "TimeWatched": "1.18:15:00" },
-      { "ChannelName": "Sotus", "TimeWatched": "1.07:55:18" },
-      { "ChannelName": "Luke Stephens", "TimeWatched": "1.06:39:04" },
-      { "ChannelName": "lilsimsie", "TimeWatched": "1.05:49:20" }
+      {
+        "Channel": {
+          "Id": "UCLtREJY21xRfCuEKvdki1Kw",
+          "ChannelTitle": "H3 Podcast",
+          "ChannelUrl": "https://www.youtube.com/channel/UCLtREJY21xRfCuEKvdki1Kw",
+          "ChannelThumbnail": "https://yt3.ggpht.com/ytc/AAUvwnib0WzVK8NfOEjfdoBJN3o1ffAuT5xTJQ9TIrtYig=s88-c-k-c0x00ffffff-no-rj",
+          "ChannelBanner": "https://yt3.ggpht.com/ZnKR8bI4sXNiHK9afp2Y1TgqnCar6n6xcKcyengFV6ja-Q19tPLap5mjtdGTl1Nk6bgSbAGheDk"
+        },
+        "TimeWatched": "13.18:51:02"
+      },
+      {
+        "Channel": {
+          "Id": "UCELh-8oY4E5UBgapPGl5cAg",
+          "ChannelTitle": "billyjoelVEVO",
+          "ChannelUrl": "https://www.youtube.com/channel/UCELh-8oY4E5UBgapPGl5cAg",
+          "ChannelThumbnail": "https://yt3.ggpht.com/ytc/AAUvwnikrXHKLkWFqPXJMgthDSpJZ2N3WDSSndvARqsFHw=s88-c-k-c0x00ffffff-no-rj-mo",
+          "ChannelBanner": "https://lh3.googleusercontent.com/yr3k1Q4EdrY1q4ozeo9LIZaIqUWSUxEZlWEKSdgQbvfmswDSMq-Br23mBcV1IOGJaJcA_R_EtZQ"
+        },
+        "TimeWatched": "7.03:15:22"
+      },
+      {
+        "Channel": {
+          "Id": "UCFaGGZmblGSW3R1j5lY_jtw",
+          "ChannelTitle": "moresimsie",
+          "ChannelUrl": "https://www.youtube.com/channel/UCFaGGZmblGSW3R1j5lY_jtw",
+          "ChannelThumbnail": "https://yt3.ggpht.com/ytc/AAUvwnhmLZ5wwIWvu_IquJMGj9gkYVCr_xeFncHbFqSOrg=s88-c-k-c0x00ffffff-no-rj",
+          "ChannelBanner": "https://lh3.googleusercontent.com/ETxDP-XjJeherwklaH_kFfR8Dg88BbW-5ef0_g2TozbcbuyiNxzzxr2aSgm8DSOoA9RcimFx"
+        },
+        "TimeWatched": "5.03:36:01"
+      },
+      {
+        "Channel": {
+          "Id": "UC-lHJZR3Gqxm24_Vd_AJ5Yw",
+          "ChannelTitle": "PewDiePie",
+          "ChannelUrl": "https://www.youtube.com/channel/UC-lHJZR3Gqxm24_Vd_AJ5Yw",
+          "ChannelThumbnail": "https://yt3.ggpht.com/ytc/AAUvwnicjOV8f1wuuYluOYqL4SEYE3PbxaVYK6_ODp5a6g=s88-c-k-c0x00ffffff-no-rj",
+          "ChannelBanner": "https://yt3.ggpht.com/wuqXYCeCdttO0TcwBJR2yy0uJP2hPwTPdrDQpjD00t0Xd_81t6dYeLdVMR24ArD4kuIpWO4hWg"
+        },
+        "TimeWatched": "4.00:20:30"
+      },
+      {
+        "Channel": {
+          "Id": "UC4PlYBhe8mzGFW4lmIkIQsg",
+          "ChannelTitle": "Anthony Caliber",
+          "ChannelUrl": "https://www.youtube.com/channel/UC4PlYBhe8mzGFW4lmIkIQsg",
+          "ChannelThumbnail": "https://yt3.ggpht.com/ytc/AAUvwniv42VTAgYG6I-fq4veiTj-EyK_o8PP7eIgx0MUpQ=s88-c-k-c0x00ffffff-no-rj",
+          "ChannelBanner": "https://lh3.googleusercontent.com/NZ2BeeO85eEBkXNVWvCa40eZn5HH0O5Dps-Ht7DeIo-EhQMbN6ck8KcrYAOXrfv-IOBn3dGQ"
+        },
+        "TimeWatched": "3.06:36:18"
+      },
+      {
+        "Channel": {
+          "Id": "UCUT8RoNBTJvwW1iErP6-b-A",
+          "ChannelTitle": "Disguised Toast",
+          "ChannelUrl": "https://www.youtube.com/channel/UCUT8RoNBTJvwW1iErP6-b-A",
+          "ChannelThumbnail": "https://yt3.ggpht.com/ytc/AAUvwngJq4alJXv_W0PICJWA0owR_Hk2UIzS7-Qkizm-Sw=s88-c-k-c0x00ffffff-no-rj",
+          "ChannelBanner": "https://lh3.googleusercontent.com/s1-v8H2C4CfNlZdQ4VAkNpVlHHlyqZdZR7Fudxk9sGChhrtRgiuS3jfNI6Pz0arFnyPHB7G5"
+        },
+        "TimeWatched": "1.21:24:40"
+      },
+      {
+        "Channel": {
+          "Id": "UC4eYXhJI4-7wSWc8UNRwD4A",
+          "ChannelTitle": "NPR Music",
+          "ChannelUrl": "https://www.youtube.com/channel/UC4eYXhJI4-7wSWc8UNRwD4A",
+          "ChannelThumbnail": "https://yt3.ggpht.com/ytc/AAUvwnjPJKGZ1p7nP6zDTOZM7jFDmcvV7GpOWHi0pxUGgw=s88-c-k-c0x00ffffff-no-rj",
+          "ChannelBanner": "https://yt3.ggpht.com/WyN8qb_2-y8e8VnGi3MZKt_Q41mYlo4aFhGVjvHsvF7wTKZSRadLwxbBXWF1lSw8acBdAVsMur4"
+        },
+        "TimeWatched": "1.18:15:00"
+      },
+      {
+        "Channel": {
+          "Id": "UC8wrarcGEpajjDGXkPby6ug",
+          "ChannelTitle": "Sotus",
+          "ChannelUrl": "https://www.youtube.com/channel/UC8wrarcGEpajjDGXkPby6ug",
+          "ChannelThumbnail": "https://yt3.ggpht.com/ytc/AAUvwnj71odd0OQyECuaizzkxoYWmp3SAcUWf8CCSNwbOQ=s88-c-k-c0x00ffffff-no-rj",
+          "ChannelBanner": "https://yt3.ggpht.com/ajV_iqXfqJSsVHfbM1i-Mv42m5i6VVN_YzguVrnbA7vJqXfNpytt7pttsSanJvOdd_zTIN5QMQ"
+        },
+        "TimeWatched": "1.07:55:18"
+      },
+      {
+        "Channel": {
+          "Id": "UCe4_UPAmhz2sqorGbF8oZHA",
+          "ChannelTitle": "Luke Stephens",
+          "ChannelUrl": "https://www.youtube.com/channel/UCe4_UPAmhz2sqorGbF8oZHA",
+          "ChannelThumbnail": "https://yt3.ggpht.com/ytc/AAUvwnigYptqvL-H6TS6VocVMtLMPeA9GvnW0SkkU4mHcQ=s88-c-k-c0x00ffffff-no-rj",
+          "ChannelBanner": "https://yt3.ggpht.com/QZyv1O6U6u-R46LUeUGxpNAkXykaZTiohQklWDgAIfvwwWuCK672urWzB95oyiRnzcjhANJOdw"
+        },
+        "TimeWatched": "1.06:39:04"
+      },
+      {
+        "Channel": {
+          "Id": "UC_TYFButglZuuDbD-0Q_IzQ",
+          "ChannelTitle": "lilsimsie",
+          "ChannelUrl": "https://www.youtube.com/channel/UC_TYFButglZuuDbD-0Q_IzQ",
+          "ChannelThumbnail": "https://yt3.ggpht.com/ytc/AAUvwnjlXEDjQlN1M2jyKLK0riGSUgogv6Q5Suf8ahiqFQ=s88-c-k-c0x00ffffff-no-rj",
+          "ChannelBanner": "https://lh3.googleusercontent.com/Stc8d6_dFCm0S2XCK0uHIXnHwFDcxQOga4V0_HflS-gsYNXiBzDBGSLyWlLCILZ09D3WbJwe1A"
+        },
+        "TimeWatched": "1.05:49:20"
+      }
     ]
   }
 ]

@@ -7,16 +7,16 @@ namespace YouTubeWrappedMVC.Models
 {
     public class TimePerChannelViewModel
     {
-        public string ChannelName { get; set; }
+        public ChannelViewModel Channel { get; set; }
         public TimeSpan TimeWatched { get; set; }
 
         public TimePerChannelViewModel()
         {
         }
 
-        public TimePerChannelViewModel(string channelName, TimeSpan timeWatched)
+        public TimePerChannelViewModel(ChannelViewModel channel, TimeSpan timeWatched)
         {
-            ChannelName = channelName;
+            Channel = channel;
             TimeWatched = timeWatched;
         }
     }
