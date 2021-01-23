@@ -29,7 +29,8 @@ namespace YouTubeWrappedMVC.Helpers
 
         public YouTubeProcessingJobData GetProcessingJob(string jobId)
         {
-            throw new NotImplementedException();
+            List<YouTubeProcessingJobData> jobs = ReadJsonDataFromTextFile<List<YouTubeProcessingJobData>>(UriHelper.PROCESSING_JOB_DATA_FILE);
+            return jobs.First(js => js.JobId == jobId);
         }
 
         public void SaveProcessingJob(YouTubeProcessingJobData processingJob)

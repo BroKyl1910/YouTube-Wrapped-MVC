@@ -1,0 +1,140 @@
+﻿.animated.slide-in-left {
+    opacity: 0;
+    animation: slide-in-left 0.4s ease;
+    animation-fill-mode: forwards;
+}
+
+.animated.slide-in-right {
+    opacity: 0;
+    animation: slide-in-right 0.4s ease;
+    animation-fill-mode: forwards;
+    transform: translateX(150%);
+}
+
+.animated.slide-up {
+    opacity: 0;
+    animation: slide-up 0.4s ease;
+    animation-fill-mode: forwards;
+    transform: translateY(150%);
+}
+
+.delayed.ms400 {
+    animation-delay: 0.4s;
+}
+
+.delayed.ms500 {
+    animation-delay: 0.5s;
+}
+
+.delayed.ms600 {
+    animation-delay: 0.6s;
+}
+
+.delayed.ms700 {
+    animation-delay: 0.7s;
+}
+
+.delayed.ms800 {
+    animation-delay: 0.8s;
+}
+
+.delayed.ms900 {
+    animation-delay: 0.9s;
+}
+
+.delayed.ms1000 {
+    animation-delay: 1s;
+}
+
+@keyframes slide-in-left {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    80% {
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-in-right {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    80% {
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-up {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    80% {
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
+@keyframes arrow-bounce-down {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes arrow-bounce-up {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes bounce-color {
+    0% {
+        border-right-color: rgba(255,255,255,1);
+        border-bottom-color: rgba(255,255,255,1);
+    }
+
+    50% {
+        border-right-color: rgba(255,255,255,0.5);
+        border-bottom-color: rgba(255,255,255,0.5);
+    }
+
+    100% {
+        border-right-color: rgba(255,255,255,1);
+        border-bottom-color: rgba(255,255,255,1);
+    }
+}

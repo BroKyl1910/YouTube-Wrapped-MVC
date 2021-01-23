@@ -177,7 +177,9 @@ namespace YouTubeWrappedMVC.Helpers
 
         public async Task<ApiVideo> GetVideoDataFromApi(string videoId)
         {
-            Uri uri = new Uri(@"https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails&id=" + videoId + "&key=AIzaSyDYJH4akcKKjhWuxJKbs3dIl_56dk6masM");
+            string googleKey = Environment.GetEnvironmentVariable("$GOOGLE_APIKEY_YOUTUBE_WRAPPED", EnvironmentVariableTarget.Machine);
+
+            Uri uri = new Uri(@"https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails&id=" + videoId + "&key="+googleKey);
 
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(uri);
             request.AutomaticDecompression = DecompressionMethods.GZip;
@@ -197,7 +199,8 @@ namespace YouTubeWrappedMVC.Helpers
 
         public async Task<ApiChannel> GetChannelDataFromApi(string channelId)
         {
-            Uri uri = new Uri(@"https://youtube.googleapis.com/youtube/v3/channels?part=snippet,brandingSettings&id=" + channelId + "&key=AIzaSyDYJH4akcKKjhWuxJKbs3dIl_56dk6masM");
+            string googleKey = Environment.GetEnvironmentVariable("$GOOGLE_APIKEY_YOUTUBE_WRAPPED", EnvironmentVariableTarget.Machine);
+            Uri uri = new Uri(@"https://youtube.googleapis.com/youtube/v3/channels?part=snippet,brandingSettings&id=" + channelId + "&key="+googleKey);
 
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(uri);
             request.AutomaticDecompression = DecompressionMethods.GZip;

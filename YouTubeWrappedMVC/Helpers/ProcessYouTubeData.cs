@@ -33,7 +33,7 @@ namespace YouTubeWrappedMVC.Helpers
             List<HistoryVideo> historyVideos = GetHistoryFromJson(takeoutDataJson).ToList();
             System.Diagnostics.Debug.WriteLine("Fetching video data");
 
-            Dictionary<string, VideoViewModel> videoViewModelsDict = await YouTubeApiHelper.GetInstance().GetVideos(historyVideos.Take(5000).ToList());
+            Dictionary<string, VideoViewModel> videoViewModelsDict = await YouTubeApiHelper.GetInstance().GetVideos(historyVideos.Take(8000).ToList());
             System.Diagnostics.Debug.WriteLine("Doing calculations");
 
             jobStatus.JobStatus = JobStatus.PROCESSING;

@@ -438,5 +438,899 @@
         "TimeWatched": "1.05:49:20"
       }
     ]
+  },
+  {
+    "JobId": "a2df342f-805d-459a-b97a-22f8970bb4e0",
+    "HistoryContext": {
+      "StartDate": "2020-05-14T22:37:40.015+02:00",
+      "EndDate": "2021-01-18T14:11:15.836+02:00"
+    },
+    "TotalVideosWatched": 9724,
+    "TotalUniqueVideosWatched": 3070,
+    "MostViewedVideo": [
+      {
+        "VideoViewModel": {
+          "Id": "rj5wZqReXQE",
+          "VideoTitle": "Wonderwall (Remastered)",
+          "VideoUrl": "https://www.youtube.com/watch?v=rj5wZqReXQE",
+          "Duration": "PT4M19S",
+          "VideoThumbnail": "https://i.ytimg.com/vi/rj5wZqReXQE/default.jpg",
+          "ChannelTitle": "Oasis - Topic",
+          "ChannelId": "UCmMUZbaYdNH0bEd1PAlAqsA"
+        },
+        "NumViews": 43
+      },
+      {
+        "VideoViewModel": {
+          "Id": "qutQn1Nxros",
+          "VideoTitle": "Wash It All Away",
+          "VideoUrl": "https://www.youtube.com/watch?v=qutQn1Nxros",
+          "Duration": "PT3M45S",
+          "VideoThumbnail": "https://i.ytimg.com/vi/qutQn1Nxros/default.jpg",
+          "ChannelTitle": "Five Finger Death Punch - Topic",
+          "ChannelId": "UC1P-VkqYRRNUxSeWkIUsYGA"
+        },
+        "NumViews": 34
+      },
+      {
+        "VideoViewModel": {
+          "Id": "HnmpOhOX57I",
+          "VideoTitle": "Where Is My Mind?",
+          "VideoUrl": "https://www.youtube.com/watch?v=HnmpOhOX57I",
+          "Duration": "PT3M57S",
+          "VideoThumbnail": "https://i.ytimg.com/vi/HnmpOhOX57I/default.jpg",
+          "ChannelTitle": "Pixies - Topic",
+          "ChannelId": "UCRt5ckI8kNVMFr-jyj1IIVg"
+        },
+        "NumViews": 32
+      },
+      {
+        "VideoViewModel": {
+          "Id": "vbMh38KGZMM",
+          "VideoTitle": "Savior",
+          "VideoUrl": "https://www.youtube.com/watch?v=vbMh38KGZMM",
+          "Duration": "PT4M3S",
+          "VideoThumbnail": "https://i.ytimg.com/vi/vbMh38KGZMM/default.jpg",
+          "ChannelTitle": "Rise Against - Topic",
+          "ChannelId": "UCNEOs26SV8KlC9XxqdR7jew"
+        },
+        "NumViews": 31
+      },
+      {
+        "VideoViewModel": {
+          "Id": "q1SJ5VuRIzc",
+          "VideoTitle": "Bad Company",
+          "VideoUrl": "https://www.youtube.com/watch?v=q1SJ5VuRIzc",
+          "Duration": "PT4M23S",
+          "VideoThumbnail": "https://i.ytimg.com/vi/q1SJ5VuRIzc/default.jpg",
+          "ChannelTitle": "Five Finger Death Punch - Topic",
+          "ChannelId": "UC1P-VkqYRRNUxSeWkIUsYGA"
+        },
+        "NumViews": 29
+      },
+      {
+        "VideoViewModel": {
+          "Id": "f1Qd_7gWp-Q",
+          "VideoTitle": "Add It Up",
+          "VideoUrl": "https://www.youtube.com/watch?v=f1Qd_7gWp-Q",
+          "Duration": "PT4M44S",
+          "VideoThumbnail": "https://i.ytimg.com/vi/f1Qd_7gWp-Q/default.jpg",
+          "ChannelTitle": "Violent Femmes - Topic",
+          "ChannelId": "UCoPPSCV914UPLHG-LoKBDQw"
+        },
+        "NumViews": 28
+      },
+      {
+        "VideoViewModel": {
+          "Id": "235sYB1hRxk",
+          "VideoTitle": "Lips Of An Angel",
+          "VideoUrl": "https://www.youtube.com/watch?v=235sYB1hRxk",
+          "Duration": "PT4M22S",
+          "VideoThumbnail": "https://i.ytimg.com/vi/235sYB1hRxk/default.jpg",
+          "ChannelTitle": "Hinder - Topic",
+          "ChannelId": "UCpIXkUPAWJVjXhOzkLQdtKw"
+        },
+        "NumViews": 28
+      },
+      {
+        "VideoViewModel": {
+          "Id": "u9ColmI3JbE",
+          "VideoTitle": "Baby T-Rex | Dinosaur Songs | Pinkfong Songs for Children",
+          "VideoUrl": "https://www.youtube.com/watch?v=u9ColmI3JbE",
+          "Duration": "PT2M7S",
+          "VideoThumbnail": "https://i.ytimg.com/vi/u9ColmI3JbE/default.jpg",
+          "ChannelTitle": "Pinkfong! Kids' Songs & Stories",
+          "ChannelId": "UCcdwLMPsaU2ezNSJU1nFoBQ"
+        },
+        "NumViews": 26
+      },
+      {
+        "VideoViewModel": {
+          "Id": "j91RZ01PZwA",
+          "VideoTitle": "You Get What You Give",
+          "VideoUrl": "https://www.youtube.com/watch?v=j91RZ01PZwA",
+          "Duration": "PT5M1S",
+          "VideoThumbnail": "https://i.ytimg.com/vi/j91RZ01PZwA/default.jpg",
+          "ChannelTitle": "New Radicals - Topic",
+          "ChannelId": "UCgNfaY6m4NQY8ol6G3Cr7WA"
+        },
+        "NumViews": 26
+      },
+      {
+        "VideoViewModel": {
+          "Id": "JwlHM8TvFE4",
+          "VideoTitle": "Everybody Talks",
+          "VideoUrl": "https://www.youtube.com/watch?v=JwlHM8TvFE4",
+          "Duration": "PT2M58S",
+          "VideoThumbnail": "https://i.ytimg.com/vi/JwlHM8TvFE4/default.jpg",
+          "ChannelTitle": "Neon Trees - Topic",
+          "ChannelId": "UCb_KlMku-n6T9x7_fkznQ4A"
+        },
+        "NumViews": 26
+      }
+    ],
+    "TotalUniqueChannelsWatched": 1249,
+    "TimeWatchedPerMonthViewModel": [
+      {
+        "MonthYearViewModel": {
+          "Month": 9,
+          "Year": 2020
+        },
+        "HoursWatched": 149.0
+      },
+      {
+        "MonthYearViewModel": {
+          "Month": 8,
+          "Year": 2020
+        },
+        "HoursWatched": 139.0
+      },
+      {
+        "MonthYearViewModel": {
+          "Month": 11,
+          "Year": 2020
+        },
+        "HoursWatched": 98.0
+      },
+      {
+        "MonthYearViewModel": {
+          "Month": 10,
+          "Year": 2020
+        },
+        "HoursWatched": 91.0
+      },
+      {
+        "MonthYearViewModel": {
+          "Month": 12,
+          "Year": 2020
+        },
+        "HoursWatched": 74.0
+      },
+      {
+        "MonthYearViewModel": {
+          "Month": 1,
+          "Year": 2021
+        },
+        "HoursWatched": 68.0
+      },
+      {
+        "MonthYearViewModel": {
+          "Month": 7,
+          "Year": 2020
+        },
+        "HoursWatched": 37.0
+      },
+      {
+        "MonthYearViewModel": {
+          "Month": 5,
+          "Year": 2020
+        },
+        "HoursWatched": 22.0
+      },
+      {
+        "MonthYearViewModel": {
+          "Month": 6,
+          "Year": 2020
+        },
+        "HoursWatched": 16.0
+      }
+    ],
+    "AverageDailyWatchTime": 3.0,
+    "AverageVideoLength": 4.0,
+    "TimeWatchedPerTimeframe": [
+      {
+        "TimeFrameName": "Late Afternoon",
+        "TimeFrameTimes": "Between 2pm and 5pm",
+        "TimeWatched": "10.06:22:47",
+        "PercentageOfTotal": "36%"
+      },
+      {
+        "TimeFrameName": "Early Evening",
+        "TimeFrameTimes": "Between 5pm and 9pm",
+        "TimeWatched": "8.10:13:22",
+        "PercentageOfTotal": "29%"
+      },
+      {
+        "TimeFrameName": "Midday",
+        "TimeFrameTimes": "Between 10am and 2pm",
+        "TimeWatched": "6.12:07:56",
+        "PercentageOfTotal": "22%"
+      },
+      {
+        "TimeFrameName": "Early Morning",
+        "TimeFrameTimes": "Between 7am and 10am",
+        "TimeWatched": "1.23:55:46",
+        "PercentageOfTotal": "7%"
+      },
+      {
+        "TimeFrameName": "Late Evening",
+        "TimeFrameTimes": "Between 9pm and 12am",
+        "TimeWatched": "1.11:10:03",
+        "PercentageOfTotal": "5%"
+      },
+      {
+        "TimeFrameName": "Crack of Dawn",
+        "TimeFrameTimes": "Between 4am and 7am",
+        "TimeWatched": "03:59:59",
+        "PercentageOfTotal": "1%"
+      },
+      {
+        "TimeFrameName": "Night Owl Hours",
+        "TimeFrameTimes": "Between 12am and 4am",
+        "TimeWatched": "02:07:06",
+        "PercentageOfTotal": "0%"
+      }
+    ],
+    "ViewsPerChannel": [
+      {
+        "Channel": {
+          "Id": "UCERrDZ8oN0U_n9MphMKERcg",
+          "ChannelTitle": "Billie Eilish - Topic",
+          "ChannelUrl": "https://www.youtube.com/channel/UCERrDZ8oN0U_n9MphMKERcg",
+          "ChannelThumbnail": "https://yt3.ggpht.com/ytc/AAUvwnhK0ws-dDeKz8k5ZJ6k0KAn_3RxrdwU3vB1ZpDGEw=s88-c-k-c0x00ffffff-no-rj",
+          "ChannelBanner": "https://yt3.ggpht.com/DwvdQ3-3jKlm2Csec92RJs9WJ1bRNX4UGFpWT_MWY-nnRvYD5uxHmAi6h1jIfLnAgQb7xXBD"
+        },
+        "NumVideos": 250
+      },
+      {
+        "Channel": {
+          "Id": "UCrSorX845CEWXzU4Z7BojjA",
+          "ChannelTitle": "Red Hot Chili Peppers - Topic",
+          "ChannelUrl": "https://www.youtube.com/channel/UCrSorX845CEWXzU4Z7BojjA",
+          "ChannelThumbnail": "https://yt3.ggpht.com/ytc/AAUvwnh4NnKQbfjGdk3o_mblzLsR0punXDIkuo_QMmIrzw=s88-c-k-c0x00ffffff-no-rj",
+          "ChannelBanner": "https://yt3.ggpht.com/fKvvhbIGHvuS4Q7V1q5VObXGjOKfZLfOSelUxze6S6MAI2aHLt9TnMqSaWKjj4_Exab0nc_Bk74"
+        },
+        "NumVideos": 198
+      },
+      {
+        "Channel": {
+          "Id": "UC527A_XB_c7XftocVOIVNeA",
+          "ChannelTitle": "My Chemical Romance - Topic",
+          "ChannelUrl": "https://www.youtube.com/channel/UC527A_XB_c7XftocVOIVNeA",
+          "ChannelThumbnail": "https://yt3.ggpht.com/ytc/AAUvwngWyniRGXccuXWJe7XpE359LZsa2J9f016KDOZfFQ=s88-c-k-c0x00ffffff-no-rj",
+          "ChannelBanner": "https://yt3.ggpht.com/9_ks6iOVj2wn94Ej-K7bpcSxtG6KhdU-eKAe0pnmNwSDgPV4UQp-YusgEfo-Aqb5FBPKN-XK2g"
+        },
+        "NumVideos": 168
+      },
+      {
+        "Channel": {
+          "Id": "UCyD3XWRK9ko-izf2nBSFitw",
+          "ChannelTitle": "Post Malone - Topic",
+          "ChannelUrl": "https://www.youtube.com/channel/UCyD3XWRK9ko-izf2nBSFitw",
+          "ChannelThumbnail": "https://yt3.ggpht.com/ytc/AAUvwngEccasZINOruGNJrrWPijiYyEs7oNppT9StVJQ4Q=s88-c-k-c0x00ffffff-no-rj",
+          "ChannelBanner": "https://yt3.ggpht.com/iLJazQa5mU_A5Tmc7W5quDjsYEI2Yef3gobLgIrOe5tO3iYPRmYXhQXwcwJswD6UphALEBe53Q"
+        },
+        "NumVideos": 162
+      },
+      {
+        "Channel": {
+          "Id": "UC1P-VkqYRRNUxSeWkIUsYGA",
+          "ChannelTitle": "Five Finger Death Punch - Topic",
+          "ChannelUrl": "https://www.youtube.com/channel/UC1P-VkqYRRNUxSeWkIUsYGA",
+          "ChannelThumbnail": "https://yt3.ggpht.com/ytc/AAUvwnhI6RuVoWH3PjzEFpdlyuJLwRBQp9WEBUObeNziIA=s88-c-k-c0x00ffffff-no-rj",
+          "ChannelBanner": "https://yt3.ggpht.com/UALPEGL6R3fLn2lXBO4g-7Eiufik-URimx7gclkkpj1EVO0i_OC774b6KUsvHzrU15RgPX8D"
+        },
+        "NumVideos": 157
+      },
+      {
+        "Channel": {
+          "Id": "UCrPe3hLA51968GwxHSZ1llw",
+          "ChannelTitle": "Nirvana - Topic",
+          "ChannelUrl": "https://www.youtube.com/channel/UCrPe3hLA51968GwxHSZ1llw",
+          "ChannelThumbnail": "https://yt3.ggpht.com/ytc/AAUvwnhARdkTaJffX7bfysMUPQ23mF9_06l9KdQNxr01=s88-c-k-c0x00ffffff-no-rj",
+          "ChannelBanner": "https://yt3.ggpht.com/ZptgsoPUTCm0VYVaVyg7NFOntMXzQFHfAS6HP9YUOzUmMjmOXeQdlv-ug5ll314l_kspbQrMDQ"
+        },
+        "NumVideos": 142
+      },
+      {
+        "Channel": {
+          "Id": "UCycDQgnBrm6VCI-Q_DxrK6g",
+          "ChannelTitle": "A Day To Remember - Topic",
+          "ChannelUrl": "https://www.youtube.com/channel/UCycDQgnBrm6VCI-Q_DxrK6g",
+          "ChannelThumbnail": "https://yt3.ggpht.com/ytc/AAUvwngKa89Qaw3zu_P6Hj0C5vJ5g8UTh5gBGu-48Rbg7Q=s88-c-k-c0x00ffffff-no-rj",
+          "ChannelBanner": "https://yt3.ggpht.com/PyWmoH7KHDQk1L6g2cY_x_sYNtlntMJz95iZKnycNtZMLR_D0AVUTkZn5ZX6fAjRtplOW12VPmI"
+        },
+        "NumVideos": 121
+      },
+      {
+        "Channel": {
+          "Id": "UCh9xZWuDWSMeedunotdYYrQ",
+          "ChannelTitle": "Slipknot - Topic",
+          "ChannelUrl": "https://www.youtube.com/channel/UCh9xZWuDWSMeedunotdYYrQ",
+          "ChannelThumbnail": "https://yt3.ggpht.com/ytc/AAUvwnit3NsIXZ9btsXL9_sVUScFIOiWKcw4bpXWIOnYDA=s88-c-k-c0x00ffffff-no-rj",
+          "ChannelBanner": "https://yt3.ggpht.com/-BZsu6i0ihczRO-_IDT3PIYZRLrSzHa6ZZB_MhOdTOe5BUwTOoGUUqWqkG2UiG-w20GKD45I"
+        },
+        "NumVideos": 120
+      },
+      {
+        "Channel": {
+          "Id": "UCRbMcMQeSFVvsyEuOn7uAKQ",
+          "ChannelTitle": "Creedence Clearwater Revival - Topic",
+          "ChannelUrl": "https://www.youtube.com/channel/UCRbMcMQeSFVvsyEuOn7uAKQ",
+          "ChannelThumbnail": "https://yt3.ggpht.com/ytc/AAUvwnjAavSBd2pO36P0dPbu9tnHxbdZctVz-kn_e694YA=s88-c-k-c0x00ffffff-no-rj",
+          "ChannelBanner": "https://yt3.ggpht.com/VLSe7FSjTnnDcqJxlx0uy_3RaxyKfoJfB2ORd8VInlKz83BUKYA1Pk2NyeRc7h290jWdT3Xm"
+        },
+        "NumVideos": 113
+      },
+      {
+        "Channel": {
+          "Id": "UCedvOgsKFzcK3hA5taf3KoQ",
+          "ChannelTitle": "Eminem - Topic",
+          "ChannelUrl": "https://www.youtube.com/channel/UCedvOgsKFzcK3hA5taf3KoQ",
+          "ChannelThumbnail": "https://yt3.ggpht.com/ytc/AAUvwngM9X_zqKIWwJ36gNEMIuY9-x3R9iRZ0RNS3dGlMQ=s88-c-k-c0x00ffffff-no-rj",
+          "ChannelBanner": "https://yt3.ggpht.com/RvSvvdRXhmMtrUnFYgk6tVqRCPpAQeP9DRpbJE3mgofIBxoJvRkbb_aeQGDmuRhfsxGhaFIMBQ"
+        },
+        "NumVideos": 113
+      }
+    ],
+    "TimeWatchedPerChannel": [
+      {
+        "Channel": {
+          "Id": "UCrSorX845CEWXzU4Z7BojjA",
+          "ChannelTitle": "Red Hot Chili Peppers - Topic",
+          "ChannelUrl": "https://www.youtube.com/channel/UCrSorX845CEWXzU4Z7BojjA",
+          "ChannelThumbnail": "https://yt3.ggpht.com/ytc/AAUvwnh4NnKQbfjGdk3o_mblzLsR0punXDIkuo_QMmIrzw=s88-c-k-c0x00ffffff-no-rj",
+          "ChannelBanner": "https://yt3.ggpht.com/fKvvhbIGHvuS4Q7V1q5VObXGjOKfZLfOSelUxze6S6MAI2aHLt9TnMqSaWKjj4_Exab0nc_Bk74"
+        },
+        "TimeWatched": "14:50:27"
+      },
+      {
+        "Channel": {
+          "Id": "UCERrDZ8oN0U_n9MphMKERcg",
+          "ChannelTitle": "Billie Eilish - Topic",
+          "ChannelUrl": "https://www.youtube.com/channel/UCERrDZ8oN0U_n9MphMKERcg",
+          "ChannelThumbnail": "https://yt3.ggpht.com/ytc/AAUvwnhK0ws-dDeKz8k5ZJ6k0KAn_3RxrdwU3vB1ZpDGEw=s88-c-k-c0x00ffffff-no-rj",
+          "ChannelBanner": "https://yt3.ggpht.com/DwvdQ3-3jKlm2Csec92RJs9WJ1bRNX4UGFpWT_MWY-nnRvYD5uxHmAi6h1jIfLnAgQb7xXBD"
+        },
+        "TimeWatched": "13:42:05"
+      },
+      {
+        "Channel": {
+          "Id": "UCKNHDjiEBSDj0CXms-0FgSQ",
+          "ChannelTitle": "abctutorial",
+          "ChannelUrl": "https://www.youtube.com/channel/UCKNHDjiEBSDj0CXms-0FgSQ",
+          "ChannelThumbnail": "https://yt3.ggpht.com/ytc/AAUvwngey8KKY7-hf4IUB3Gr0MO9FVLBmNUWbu0jZINZ=s88-c-k-c0x00ffffff-no-rj",
+          "ChannelBanner": "https://lh3.googleusercontent.com/moPIMxhe1L12EKAiDSZqjY2xe0Gqa5kBetfVs9ShdhUfB7MdvX63XwkNenXGEkc11z69GQff"
+        },
+        "TimeWatched": "11:40:40"
+      },
+      {
+        "Channel": {
+          "Id": "UC527A_XB_c7XftocVOIVNeA",
+          "ChannelTitle": "My Chemical Romance - Topic",
+          "ChannelUrl": "https://www.youtube.com/channel/UC527A_XB_c7XftocVOIVNeA",
+          "ChannelThumbnail": "https://yt3.ggpht.com/ytc/AAUvwngWyniRGXccuXWJe7XpE359LZsa2J9f016KDOZfFQ=s88-c-k-c0x00ffffff-no-rj",
+          "ChannelBanner": "https://yt3.ggpht.com/9_ks6iOVj2wn94Ej-K7bpcSxtG6KhdU-eKAe0pnmNwSDgPV4UQp-YusgEfo-Aqb5FBPKN-XK2g"
+        },
+        "TimeWatched": "11:23:57"
+      },
+      {
+        "Channel": {
+          "Id": "UC1P-VkqYRRNUxSeWkIUsYGA",
+          "ChannelTitle": "Five Finger Death Punch - Topic",
+          "ChannelUrl": "https://www.youtube.com/channel/UC1P-VkqYRRNUxSeWkIUsYGA",
+          "ChannelThumbnail": "https://yt3.ggpht.com/ytc/AAUvwnhI6RuVoWH3PjzEFpdlyuJLwRBQp9WEBUObeNziIA=s88-c-k-c0x00ffffff-no-rj",
+          "ChannelBanner": "https://yt3.ggpht.com/UALPEGL6R3fLn2lXBO4g-7Eiufik-URimx7gclkkpj1EVO0i_OC774b6KUsvHzrU15RgPX8D"
+        },
+        "TimeWatched": "10:24:48"
+      },
+      {
+        "Channel": {
+          "Id": "UCyD3XWRK9ko-izf2nBSFitw",
+          "ChannelTitle": "Post Malone - Topic",
+          "ChannelUrl": "https://www.youtube.com/channel/UCyD3XWRK9ko-izf2nBSFitw",
+          "ChannelThumbnail": "https://yt3.ggpht.com/ytc/AAUvwngEccasZINOruGNJrrWPijiYyEs7oNppT9StVJQ4Q=s88-c-k-c0x00ffffff-no-rj",
+          "ChannelBanner": "https://yt3.ggpht.com/iLJazQa5mU_A5Tmc7W5quDjsYEI2Yef3gobLgIrOe5tO3iYPRmYXhQXwcwJswD6UphALEBe53Q"
+        },
+        "TimeWatched": "09:54:56"
+      },
+      {
+        "Channel": {
+          "Id": "UCrPe3hLA51968GwxHSZ1llw",
+          "ChannelTitle": "Nirvana - Topic",
+          "ChannelUrl": "https://www.youtube.com/channel/UCrPe3hLA51968GwxHSZ1llw",
+          "ChannelThumbnail": "https://yt3.ggpht.com/ytc/AAUvwnhARdkTaJffX7bfysMUPQ23mF9_06l9KdQNxr01=s88-c-k-c0x00ffffff-no-rj",
+          "ChannelBanner": "https://yt3.ggpht.com/ZptgsoPUTCm0VYVaVyg7NFOntMXzQFHfAS6HP9YUOzUmMjmOXeQdlv-ug5ll314l_kspbQrMDQ"
+        },
+        "TimeWatched": "09:52:43"
+      },
+      {
+        "Channel": {
+          "Id": "UCh9xZWuDWSMeedunotdYYrQ",
+          "ChannelTitle": "Slipknot - Topic",
+          "ChannelUrl": "https://www.youtube.com/channel/UCh9xZWuDWSMeedunotdYYrQ",
+          "ChannelThumbnail": "https://yt3.ggpht.com/ytc/AAUvwnit3NsIXZ9btsXL9_sVUScFIOiWKcw4bpXWIOnYDA=s88-c-k-c0x00ffffff-no-rj",
+          "ChannelBanner": "https://yt3.ggpht.com/-BZsu6i0ihczRO-_IDT3PIYZRLrSzHa6ZZB_MhOdTOe5BUwTOoGUUqWqkG2UiG-w20GKD45I"
+        },
+        "TimeWatched": "09:08:11"
+      },
+      {
+        "Channel": {
+          "Id": "UCedvOgsKFzcK3hA5taf3KoQ",
+          "ChannelTitle": "Eminem - Topic",
+          "ChannelUrl": "https://www.youtube.com/channel/UCedvOgsKFzcK3hA5taf3KoQ",
+          "ChannelThumbnail": "https://yt3.ggpht.com/ytc/AAUvwngM9X_zqKIWwJ36gNEMIuY9-x3R9iRZ0RNS3dGlMQ=s88-c-k-c0x00ffffff-no-rj",
+          "ChannelBanner": "https://yt3.ggpht.com/RvSvvdRXhmMtrUnFYgk6tVqRCPpAQeP9DRpbJE3mgofIBxoJvRkbb_aeQGDmuRhfsxGhaFIMBQ"
+        },
+        "TimeWatched": "08:49:28"
+      },
+      {
+        "Channel": {
+          "Id": "UC4JNeITH4P7G51C1hJoG6vQ",
+          "ChannelTitle": "Green Day - Topic",
+          "ChannelUrl": "https://www.youtube.com/channel/UC4JNeITH4P7G51C1hJoG6vQ",
+          "ChannelThumbnail": "https://yt3.ggpht.com/ytc/AAUvwnhbcAg2Av0hvx79hHcuO4V5ijOjLpC4mQN5c83o7Q=s88-c-k-c0x00ffffff-no-rj",
+          "ChannelBanner": "https://yt3.ggpht.com/HrEapJVIcho7mKs05hHGWiXKiUF36LHVX60cgZZw2cBH_8-K9SIBRq56bpNOZiEhKJWvZJbmBg"
+        },
+        "TimeWatched": "08:37:36"
+      }
+    ]
+  },
+  {
+    "JobId": "cfa43b21-d795-4bea-9e86-18bb1ce8d6f0",
+    "HistoryContext": {
+      "StartDate": "2020-05-14T22:37:40.015+02:00",
+      "EndDate": "2021-01-18T14:11:15.836+02:00"
+    },
+    "TotalVideosWatched": 9724,
+    "TotalUniqueVideosWatched": 3070,
+    "MostViewedVideo": [
+      {
+        "VideoViewModel": {
+          "Id": "rj5wZqReXQE",
+          "VideoTitle": "Wonderwall (Remastered)",
+          "VideoUrl": "https://www.youtube.com/watch?v=rj5wZqReXQE",
+          "Duration": "PT4M19S",
+          "VideoThumbnail": "https://i.ytimg.com/vi/rj5wZqReXQE/default.jpg",
+          "ChannelTitle": "Oasis - Topic",
+          "ChannelId": "UCmMUZbaYdNH0bEd1PAlAqsA"
+        },
+        "NumViews": 43
+      },
+      {
+        "VideoViewModel": {
+          "Id": "qutQn1Nxros",
+          "VideoTitle": "Wash It All Away",
+          "VideoUrl": "https://www.youtube.com/watch?v=qutQn1Nxros",
+          "Duration": "PT3M45S",
+          "VideoThumbnail": "https://i.ytimg.com/vi/qutQn1Nxros/default.jpg",
+          "ChannelTitle": "Five Finger Death Punch - Topic",
+          "ChannelId": "UC1P-VkqYRRNUxSeWkIUsYGA"
+        },
+        "NumViews": 34
+      },
+      {
+        "VideoViewModel": {
+          "Id": "HnmpOhOX57I",
+          "VideoTitle": "Where Is My Mind?",
+          "VideoUrl": "https://www.youtube.com/watch?v=HnmpOhOX57I",
+          "Duration": "PT3M57S",
+          "VideoThumbnail": "https://i.ytimg.com/vi/HnmpOhOX57I/default.jpg",
+          "ChannelTitle": "Pixies - Topic",
+          "ChannelId": "UCRt5ckI8kNVMFr-jyj1IIVg"
+        },
+        "NumViews": 32
+      },
+      {
+        "VideoViewModel": {
+          "Id": "vbMh38KGZMM",
+          "VideoTitle": "Savior",
+          "VideoUrl": "https://www.youtube.com/watch?v=vbMh38KGZMM",
+          "Duration": "PT4M3S",
+          "VideoThumbnail": "https://i.ytimg.com/vi/vbMh38KGZMM/default.jpg",
+          "ChannelTitle": "Rise Against - Topic",
+          "ChannelId": "UCNEOs26SV8KlC9XxqdR7jew"
+        },
+        "NumViews": 31
+      },
+      {
+        "VideoViewModel": {
+          "Id": "q1SJ5VuRIzc",
+          "VideoTitle": "Bad Company",
+          "VideoUrl": "https://www.youtube.com/watch?v=q1SJ5VuRIzc",
+          "Duration": "PT4M23S",
+          "VideoThumbnail": "https://i.ytimg.com/vi/q1SJ5VuRIzc/default.jpg",
+          "ChannelTitle": "Five Finger Death Punch - Topic",
+          "ChannelId": "UC1P-VkqYRRNUxSeWkIUsYGA"
+        },
+        "NumViews": 29
+      },
+      {
+        "VideoViewModel": {
+          "Id": "f1Qd_7gWp-Q",
+          "VideoTitle": "Add It Up",
+          "VideoUrl": "https://www.youtube.com/watch?v=f1Qd_7gWp-Q",
+          "Duration": "PT4M44S",
+          "VideoThumbnail": "https://i.ytimg.com/vi/f1Qd_7gWp-Q/default.jpg",
+          "ChannelTitle": "Violent Femmes - Topic",
+          "ChannelId": "UCoPPSCV914UPLHG-LoKBDQw"
+        },
+        "NumViews": 28
+      },
+      {
+        "VideoViewModel": {
+          "Id": "235sYB1hRxk",
+          "VideoTitle": "Lips Of An Angel",
+          "VideoUrl": "https://www.youtube.com/watch?v=235sYB1hRxk",
+          "Duration": "PT4M22S",
+          "VideoThumbnail": "https://i.ytimg.com/vi/235sYB1hRxk/default.jpg",
+          "ChannelTitle": "Hinder - Topic",
+          "ChannelId": "UCpIXkUPAWJVjXhOzkLQdtKw"
+        },
+        "NumViews": 28
+      },
+      {
+        "VideoViewModel": {
+          "Id": "u9ColmI3JbE",
+          "VideoTitle": "Baby T-Rex | Dinosaur Songs | Pinkfong Songs for Children",
+          "VideoUrl": "https://www.youtube.com/watch?v=u9ColmI3JbE",
+          "Duration": "PT2M7S",
+          "VideoThumbnail": "https://i.ytimg.com/vi/u9ColmI3JbE/default.jpg",
+          "ChannelTitle": "Pinkfong! Kids' Songs & Stories",
+          "ChannelId": "UCcdwLMPsaU2ezNSJU1nFoBQ"
+        },
+        "NumViews": 26
+      },
+      {
+        "VideoViewModel": {
+          "Id": "j91RZ01PZwA",
+          "VideoTitle": "You Get What You Give",
+          "VideoUrl": "https://www.youtube.com/watch?v=j91RZ01PZwA",
+          "Duration": "PT5M1S",
+          "VideoThumbnail": "https://i.ytimg.com/vi/j91RZ01PZwA/default.jpg",
+          "ChannelTitle": "New Radicals - Topic",
+          "ChannelId": "UCgNfaY6m4NQY8ol6G3Cr7WA"
+        },
+        "NumViews": 26
+      },
+      {
+        "VideoViewModel": {
+          "Id": "JwlHM8TvFE4",
+          "VideoTitle": "Everybody Talks",
+          "VideoUrl": "https://www.youtube.com/watch?v=JwlHM8TvFE4",
+          "Duration": "PT2M58S",
+          "VideoThumbnail": "https://i.ytimg.com/vi/JwlHM8TvFE4/default.jpg",
+          "ChannelTitle": "Neon Trees - Topic",
+          "ChannelId": "UCb_KlMku-n6T9x7_fkznQ4A"
+        },
+        "NumViews": 26
+      }
+    ],
+    "TotalUniqueChannelsWatched": 1249,
+    "TimeWatchedPerMonthViewModel": [
+      {
+        "MonthYearViewModel": {
+          "Month": 9,
+          "Year": 2020
+        },
+        "HoursWatched": 149.0
+      },
+      {
+        "MonthYearViewModel": {
+          "Month": 8,
+          "Year": 2020
+        },
+        "HoursWatched": 139.0
+      },
+      {
+        "MonthYearViewModel": {
+          "Month": 11,
+          "Year": 2020
+        },
+        "HoursWatched": 98.0
+      },
+      {
+        "MonthYearViewModel": {
+          "Month": 10,
+          "Year": 2020
+        },
+        "HoursWatched": 91.0
+      },
+      {
+        "MonthYearViewModel": {
+          "Month": 12,
+          "Year": 2020
+        },
+        "HoursWatched": 74.0
+      },
+      {
+        "MonthYearViewModel": {
+          "Month": 1,
+          "Year": 2021
+        },
+        "HoursWatched": 68.0
+      },
+      {
+        "MonthYearViewModel": {
+          "Month": 7,
+          "Year": 2020
+        },
+        "HoursWatched": 37.0
+      },
+      {
+        "MonthYearViewModel": {
+          "Month": 5,
+          "Year": 2020
+        },
+        "HoursWatched": 22.0
+      },
+      {
+        "MonthYearViewModel": {
+          "Month": 6,
+          "Year": 2020
+        },
+        "HoursWatched": 16.0
+      }
+    ],
+    "AverageDailyWatchTime": 3.0,
+    "AverageVideoLength": 4.0,
+    "TimeWatchedPerTimeframe": [
+      {
+        "TimeFrameName": "Late Afternoon",
+        "TimeFrameTimes": "Between 2pm and 5pm",
+        "TimeWatched": "10.06:22:47",
+        "PercentageOfTotal": "36%"
+      },
+      {
+        "TimeFrameName": "Early Evening",
+        "TimeFrameTimes": "Between 5pm and 9pm",
+        "TimeWatched": "8.10:13:22",
+        "PercentageOfTotal": "29%"
+      },
+      {
+        "TimeFrameName": "Midday",
+        "TimeFrameTimes": "Between 10am and 2pm",
+        "TimeWatched": "6.12:07:56",
+        "PercentageOfTotal": "22%"
+      },
+      {
+        "TimeFrameName": "Early Morning",
+        "TimeFrameTimes": "Between 7am and 10am",
+        "TimeWatched": "1.23:55:46",
+        "PercentageOfTotal": "7%"
+      },
+      {
+        "TimeFrameName": "Late Evening",
+        "TimeFrameTimes": "Between 9pm and 12am",
+        "TimeWatched": "1.11:10:03",
+        "PercentageOfTotal": "5%"
+      },
+      {
+        "TimeFrameName": "Crack of Dawn",
+        "TimeFrameTimes": "Between 4am and 7am",
+        "TimeWatched": "03:59:59",
+        "PercentageOfTotal": "1%"
+      },
+      {
+        "TimeFrameName": "Night Owl Hours",
+        "TimeFrameTimes": "Between 12am and 4am",
+        "TimeWatched": "02:07:06",
+        "PercentageOfTotal": "0%"
+      }
+    ],
+    "ViewsPerChannel": [
+      {
+        "Channel": {
+          "Id": "UCERrDZ8oN0U_n9MphMKERcg",
+          "ChannelTitle": "Billie Eilish - Topic",
+          "ChannelUrl": "https://www.youtube.com/channel/UCERrDZ8oN0U_n9MphMKERcg",
+          "ChannelThumbnail": "https://yt3.ggpht.com/ytc/AAUvwnhK0ws-dDeKz8k5ZJ6k0KAn_3RxrdwU3vB1ZpDGEw=s88-c-k-c0x00ffffff-no-rj",
+          "ChannelBanner": "https://yt3.ggpht.com/DwvdQ3-3jKlm2Csec92RJs9WJ1bRNX4UGFpWT_MWY-nnRvYD5uxHmAi6h1jIfLnAgQb7xXBD"
+        },
+        "NumVideos": 250
+      },
+      {
+        "Channel": {
+          "Id": "UCrSorX845CEWXzU4Z7BojjA",
+          "ChannelTitle": "Red Hot Chili Peppers - Topic",
+          "ChannelUrl": "https://www.youtube.com/channel/UCrSorX845CEWXzU4Z7BojjA",
+          "ChannelThumbnail": "https://yt3.ggpht.com/ytc/AAUvwnh4NnKQbfjGdk3o_mblzLsR0punXDIkuo_QMmIrzw=s88-c-k-c0x00ffffff-no-rj",
+          "ChannelBanner": "https://yt3.ggpht.com/fKvvhbIGHvuS4Q7V1q5VObXGjOKfZLfOSelUxze6S6MAI2aHLt9TnMqSaWKjj4_Exab0nc_Bk74"
+        },
+        "NumVideos": 198
+      },
+      {
+        "Channel": {
+          "Id": "UC527A_XB_c7XftocVOIVNeA",
+          "ChannelTitle": "My Chemical Romance - Topic",
+          "ChannelUrl": "https://www.youtube.com/channel/UC527A_XB_c7XftocVOIVNeA",
+          "ChannelThumbnail": "https://yt3.ggpht.com/ytc/AAUvwngWyniRGXccuXWJe7XpE359LZsa2J9f016KDOZfFQ=s88-c-k-c0x00ffffff-no-rj",
+          "ChannelBanner": "https://yt3.ggpht.com/9_ks6iOVj2wn94Ej-K7bpcSxtG6KhdU-eKAe0pnmNwSDgPV4UQp-YusgEfo-Aqb5FBPKN-XK2g"
+        },
+        "NumVideos": 168
+      },
+      {
+        "Channel": {
+          "Id": "UCyD3XWRK9ko-izf2nBSFitw",
+          "ChannelTitle": "Post Malone - Topic",
+          "ChannelUrl": "https://www.youtube.com/channel/UCyD3XWRK9ko-izf2nBSFitw",
+          "ChannelThumbnail": "https://yt3.ggpht.com/ytc/AAUvwngEccasZINOruGNJrrWPijiYyEs7oNppT9StVJQ4Q=s88-c-k-c0x00ffffff-no-rj",
+          "ChannelBanner": "https://yt3.ggpht.com/iLJazQa5mU_A5Tmc7W5quDjsYEI2Yef3gobLgIrOe5tO3iYPRmYXhQXwcwJswD6UphALEBe53Q"
+        },
+        "NumVideos": 162
+      },
+      {
+        "Channel": {
+          "Id": "UC1P-VkqYRRNUxSeWkIUsYGA",
+          "ChannelTitle": "Five Finger Death Punch - Topic",
+          "ChannelUrl": "https://www.youtube.com/channel/UC1P-VkqYRRNUxSeWkIUsYGA",
+          "ChannelThumbnail": "https://yt3.ggpht.com/ytc/AAUvwnhI6RuVoWH3PjzEFpdlyuJLwRBQp9WEBUObeNziIA=s88-c-k-c0x00ffffff-no-rj",
+          "ChannelBanner": "https://yt3.ggpht.com/UALPEGL6R3fLn2lXBO4g-7Eiufik-URimx7gclkkpj1EVO0i_OC774b6KUsvHzrU15RgPX8D"
+        },
+        "NumVideos": 157
+      },
+      {
+        "Channel": {
+          "Id": "UCrPe3hLA51968GwxHSZ1llw",
+          "ChannelTitle": "Nirvana - Topic",
+          "ChannelUrl": "https://www.youtube.com/channel/UCrPe3hLA51968GwxHSZ1llw",
+          "ChannelThumbnail": "https://yt3.ggpht.com/ytc/AAUvwnhARdkTaJffX7bfysMUPQ23mF9_06l9KdQNxr01=s88-c-k-c0x00ffffff-no-rj",
+          "ChannelBanner": "https://yt3.ggpht.com/ZptgsoPUTCm0VYVaVyg7NFOntMXzQFHfAS6HP9YUOzUmMjmOXeQdlv-ug5ll314l_kspbQrMDQ"
+        },
+        "NumVideos": 142
+      },
+      {
+        "Channel": {
+          "Id": "UCycDQgnBrm6VCI-Q_DxrK6g",
+          "ChannelTitle": "A Day To Remember - Topic",
+          "ChannelUrl": "https://www.youtube.com/channel/UCycDQgnBrm6VCI-Q_DxrK6g",
+          "ChannelThumbnail": "https://yt3.ggpht.com/ytc/AAUvwngKa89Qaw3zu_P6Hj0C5vJ5g8UTh5gBGu-48Rbg7Q=s88-c-k-c0x00ffffff-no-rj",
+          "ChannelBanner": "https://yt3.ggpht.com/PyWmoH7KHDQk1L6g2cY_x_sYNtlntMJz95iZKnycNtZMLR_D0AVUTkZn5ZX6fAjRtplOW12VPmI"
+        },
+        "NumVideos": 121
+      },
+      {
+        "Channel": {
+          "Id": "UCh9xZWuDWSMeedunotdYYrQ",
+          "ChannelTitle": "Slipknot - Topic",
+          "ChannelUrl": "https://www.youtube.com/channel/UCh9xZWuDWSMeedunotdYYrQ",
+          "ChannelThumbnail": "https://yt3.ggpht.com/ytc/AAUvwnit3NsIXZ9btsXL9_sVUScFIOiWKcw4bpXWIOnYDA=s88-c-k-c0x00ffffff-no-rj",
+          "ChannelBanner": "https://yt3.ggpht.com/-BZsu6i0ihczRO-_IDT3PIYZRLrSzHa6ZZB_MhOdTOe5BUwTOoGUUqWqkG2UiG-w20GKD45I"
+        },
+        "NumVideos": 120
+      },
+      {
+        "Channel": {
+          "Id": "UCRbMcMQeSFVvsyEuOn7uAKQ",
+          "ChannelTitle": "Creedence Clearwater Revival - Topic",
+          "ChannelUrl": "https://www.youtube.com/channel/UCRbMcMQeSFVvsyEuOn7uAKQ",
+          "ChannelThumbnail": "https://yt3.ggpht.com/ytc/AAUvwnjAavSBd2pO36P0dPbu9tnHxbdZctVz-kn_e694YA=s88-c-k-c0x00ffffff-no-rj",
+          "ChannelBanner": "https://yt3.ggpht.com/VLSe7FSjTnnDcqJxlx0uy_3RaxyKfoJfB2ORd8VInlKz83BUKYA1Pk2NyeRc7h290jWdT3Xm"
+        },
+        "NumVideos": 113
+      },
+      {
+        "Channel": {
+          "Id": "UCedvOgsKFzcK3hA5taf3KoQ",
+          "ChannelTitle": "Eminem - Topic",
+          "ChannelUrl": "https://www.youtube.com/channel/UCedvOgsKFzcK3hA5taf3KoQ",
+          "ChannelThumbnail": "https://yt3.ggpht.com/ytc/AAUvwngM9X_zqKIWwJ36gNEMIuY9-x3R9iRZ0RNS3dGlMQ=s88-c-k-c0x00ffffff-no-rj",
+          "ChannelBanner": "https://yt3.ggpht.com/RvSvvdRXhmMtrUnFYgk6tVqRCPpAQeP9DRpbJE3mgofIBxoJvRkbb_aeQGDmuRhfsxGhaFIMBQ"
+        },
+        "NumVideos": 113
+      }
+    ],
+    "TimeWatchedPerChannel": [
+      {
+        "Channel": {
+          "Id": "UCrSorX845CEWXzU4Z7BojjA",
+          "ChannelTitle": "Red Hot Chili Peppers - Topic",
+          "ChannelUrl": "https://www.youtube.com/channel/UCrSorX845CEWXzU4Z7BojjA",
+          "ChannelThumbnail": "https://yt3.ggpht.com/ytc/AAUvwnh4NnKQbfjGdk3o_mblzLsR0punXDIkuo_QMmIrzw=s88-c-k-c0x00ffffff-no-rj",
+          "ChannelBanner": "https://yt3.ggpht.com/fKvvhbIGHvuS4Q7V1q5VObXGjOKfZLfOSelUxze6S6MAI2aHLt9TnMqSaWKjj4_Exab0nc_Bk74"
+        },
+        "TimeWatched": "14:50:27"
+      },
+      {
+        "Channel": {
+          "Id": "UCERrDZ8oN0U_n9MphMKERcg",
+          "ChannelTitle": "Billie Eilish - Topic",
+          "ChannelUrl": "https://www.youtube.com/channel/UCERrDZ8oN0U_n9MphMKERcg",
+          "ChannelThumbnail": "https://yt3.ggpht.com/ytc/AAUvwnhK0ws-dDeKz8k5ZJ6k0KAn_3RxrdwU3vB1ZpDGEw=s88-c-k-c0x00ffffff-no-rj",
+          "ChannelBanner": "https://yt3.ggpht.com/DwvdQ3-3jKlm2Csec92RJs9WJ1bRNX4UGFpWT_MWY-nnRvYD5uxHmAi6h1jIfLnAgQb7xXBD"
+        },
+        "TimeWatched": "13:42:05"
+      },
+      {
+        "Channel": {
+          "Id": "UCKNHDjiEBSDj0CXms-0FgSQ",
+          "ChannelTitle": "abctutorial",
+          "ChannelUrl": "https://www.youtube.com/channel/UCKNHDjiEBSDj0CXms-0FgSQ",
+          "ChannelThumbnail": "https://yt3.ggpht.com/ytc/AAUvwngey8KKY7-hf4IUB3Gr0MO9FVLBmNUWbu0jZINZ=s88-c-k-c0x00ffffff-no-rj",
+          "ChannelBanner": "https://lh3.googleusercontent.com/moPIMxhe1L12EKAiDSZqjY2xe0Gqa5kBetfVs9ShdhUfB7MdvX63XwkNenXGEkc11z69GQff"
+        },
+        "TimeWatched": "11:40:40"
+      },
+      {
+        "Channel": {
+          "Id": "UC527A_XB_c7XftocVOIVNeA",
+          "ChannelTitle": "My Chemical Romance - Topic",
+          "ChannelUrl": "https://www.youtube.com/channel/UC527A_XB_c7XftocVOIVNeA",
+          "ChannelThumbnail": "https://yt3.ggpht.com/ytc/AAUvwngWyniRGXccuXWJe7XpE359LZsa2J9f016KDOZfFQ=s88-c-k-c0x00ffffff-no-rj",
+          "ChannelBanner": "https://yt3.ggpht.com/9_ks6iOVj2wn94Ej-K7bpcSxtG6KhdU-eKAe0pnmNwSDgPV4UQp-YusgEfo-Aqb5FBPKN-XK2g"
+        },
+        "TimeWatched": "11:23:57"
+      },
+      {
+        "Channel": {
+          "Id": "UC1P-VkqYRRNUxSeWkIUsYGA",
+          "ChannelTitle": "Five Finger Death Punch - Topic",
+          "ChannelUrl": "https://www.youtube.com/channel/UC1P-VkqYRRNUxSeWkIUsYGA",
+          "ChannelThumbnail": "https://yt3.ggpht.com/ytc/AAUvwnhI6RuVoWH3PjzEFpdlyuJLwRBQp9WEBUObeNziIA=s88-c-k-c0x00ffffff-no-rj",
+          "ChannelBanner": "https://yt3.ggpht.com/UALPEGL6R3fLn2lXBO4g-7Eiufik-URimx7gclkkpj1EVO0i_OC774b6KUsvHzrU15RgPX8D"
+        },
+        "TimeWatched": "10:24:48"
+      },
+      {
+        "Channel": {
+          "Id": "UCyD3XWRK9ko-izf2nBSFitw",
+          "ChannelTitle": "Post Malone - Topic",
+          "ChannelUrl": "https://www.youtube.com/channel/UCyD3XWRK9ko-izf2nBSFitw",
+          "ChannelThumbnail": "https://yt3.ggpht.com/ytc/AAUvwngEccasZINOruGNJrrWPijiYyEs7oNppT9StVJQ4Q=s88-c-k-c0x00ffffff-no-rj",
+          "ChannelBanner": "https://yt3.ggpht.com/iLJazQa5mU_A5Tmc7W5quDjsYEI2Yef3gobLgIrOe5tO3iYPRmYXhQXwcwJswD6UphALEBe53Q"
+        },
+        "TimeWatched": "09:54:56"
+      },
+      {
+        "Channel": {
+          "Id": "UCrPe3hLA51968GwxHSZ1llw",
+          "ChannelTitle": "Nirvana - Topic",
+          "ChannelUrl": "https://www.youtube.com/channel/UCrPe3hLA51968GwxHSZ1llw",
+          "ChannelThumbnail": "https://yt3.ggpht.com/ytc/AAUvwnhARdkTaJffX7bfysMUPQ23mF9_06l9KdQNxr01=s88-c-k-c0x00ffffff-no-rj",
+          "ChannelBanner": "https://yt3.ggpht.com/ZptgsoPUTCm0VYVaVyg7NFOntMXzQFHfAS6HP9YUOzUmMjmOXeQdlv-ug5ll314l_kspbQrMDQ"
+        },
+        "TimeWatched": "09:52:43"
+      },
+      {
+        "Channel": {
+          "Id": "UCh9xZWuDWSMeedunotdYYrQ",
+          "ChannelTitle": "Slipknot - Topic",
+          "ChannelUrl": "https://www.youtube.com/channel/UCh9xZWuDWSMeedunotdYYrQ",
+          "ChannelThumbnail": "https://yt3.ggpht.com/ytc/AAUvwnit3NsIXZ9btsXL9_sVUScFIOiWKcw4bpXWIOnYDA=s88-c-k-c0x00ffffff-no-rj",
+          "ChannelBanner": "https://yt3.ggpht.com/-BZsu6i0ihczRO-_IDT3PIYZRLrSzHa6ZZB_MhOdTOe5BUwTOoGUUqWqkG2UiG-w20GKD45I"
+        },
+        "TimeWatched": "09:08:11"
+      },
+      {
+        "Channel": {
+          "Id": "UCedvOgsKFzcK3hA5taf3KoQ",
+          "ChannelTitle": "Eminem - Topic",
+          "ChannelUrl": "https://www.youtube.com/channel/UCedvOgsKFzcK3hA5taf3KoQ",
+          "ChannelThumbnail": "https://yt3.ggpht.com/ytc/AAUvwngM9X_zqKIWwJ36gNEMIuY9-x3R9iRZ0RNS3dGlMQ=s88-c-k-c0x00ffffff-no-rj",
+          "ChannelBanner": "https://yt3.ggpht.com/RvSvvdRXhmMtrUnFYgk6tVqRCPpAQeP9DRpbJE3mgofIBxoJvRkbb_aeQGDmuRhfsxGhaFIMBQ"
+        },
+        "TimeWatched": "08:49:28"
+      },
+      {
+        "Channel": {
+          "Id": "UC4JNeITH4P7G51C1hJoG6vQ",
+          "ChannelTitle": "Green Day - Topic",
+          "ChannelUrl": "https://www.youtube.com/channel/UC4JNeITH4P7G51C1hJoG6vQ",
+          "ChannelThumbnail": "https://yt3.ggpht.com/ytc/AAUvwnhbcAg2Av0hvx79hHcuO4V5ijOjLpC4mQN5c83o7Q=s88-c-k-c0x00ffffff-no-rj",
+          "ChannelBanner": "https://yt3.ggpht.com/HrEapJVIcho7mKs05hHGWiXKiUF36LHVX60cgZZw2cBH_8-K9SIBRq56bpNOZiEhKJWvZJbmBg"
+        },
+        "TimeWatched": "08:37:36"
+      }
+    ]
   }
 ]

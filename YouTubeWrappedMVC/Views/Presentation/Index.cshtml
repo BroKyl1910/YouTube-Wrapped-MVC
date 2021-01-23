@@ -1,0 +1,100 @@
+﻿@model YouTubeWrappedMVC.Models.YouTubeProcessingJobData
+@{
+    ViewData["Title"] = "View Presentation";
+}
+
+<div class="home-body-wrapper">
+    <div class="slick-wrapper">
+        <div class="main-slick">
+            <div class="carousel_slide">
+                <div class="home-greeting-heading animated slide-in-left">
+                    <i class="fab fa-youtube youtube-icon"></i>
+                    <span>YouTube Wrapped</span>
+                </div>
+                <div class="home-greeting-body animated slide-in-right delayed ms500">
+                    <p>Your data is ready to be viewed. What are you waiting for? Let's go!</p>
+                </div>
+                <div class="greeting-proceed-wrapper bottom">
+                    <div class="flex-vertical-spacer"></div>
+                    <span class="proceed-text proceed-first-slide">Proceed</span>
+                    <span class="proceed-arrow"></span>
+                </div>
+            </div>
+            <div class="carousel_slide">
+                <div class="home-upload-heading animated slide-in-left">
+                    <span>Data Context</span>
+                </div>
+                <div class="home-greeting-body animated slide-in-right delayed ms500">
+                    <p>What timespan does this data cover?</p>
+                </div>
+                <div class="presentation-text-data-wrapper animated slide-in-left delayed ms1000">
+                    <div class="presentation-text-data-container">
+                        <span class="presentation-text-data-text-big">@Model.HistoryContext.StartDate.ToShortDateString()</span>
+                        <span class="presentation-text-data-text-medium">to</span>
+                        <span class="presentation-text-data-text-big">@Model.HistoryContext.EndDate.ToShortDateString()</span>
+                    </div>
+                </div>
+                <div class="greeting-proceed-wrapper bottom vertical">
+                    <div class="flex-vertical-spacer"></div>
+                    <span class="vertical back-arrow"></span>
+                    <span class="vertical proceed-text">1/7</span>
+                    <span class="vertical proceed-arrow"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('.main-slick').slick({
+            dots: false,
+            infinite: false,
+            speed: 300,
+            slidesToShow: 1,
+            arrows: true,
+            nextArrow: $('.proceed-first-slide, .vertical.proceed-arrow'),
+            prevArrow: $('.carousel_slide .back-text, .vertical.back-arrow'),
+            vertical: true,
+            verticalSwiping: false,
+            adaptiveHeight: true,
+            draggable: false,
+            swipe: false,
+            swipeToSlide: false,
+            touchMove: false,
+            draggable: false
+        }).on("beforeChange", function (event, slick, currentSlide, nextSlide) {
+            restartAnimations(nextSlide);
+        }).on('setPosition', function (event, slick) {
+            slick.$slides.css('height', slick.$slideTrack.height() + 'px');
+        });
+
+        fixHeights();
+
+    });
+
+    function fixHeights() {
+        // Calculate the heighest slide and set a top/bottom margin for other children.
+        // As variableHeight is not supported yet: https://github.com/kenwheeler/slick/issues/1803
+        var maxHeight = -1;
+        $('.slick-slide').each(function () {
+            if ($(this).height() > maxHeight) {
+                maxHeight = $(this).height();
+            }
+        });
+
+        for (var i = 0; i < length; i++) {
+            var proceedDiv = $('.greeting-proceed-wrapper.bottom')[i];
+            var heightDifference = maxHeight - $($('.slick-slide')[i]).height();
+            $(proceedDiv).css('margin-top', heightDifference + 10 + 'px');
+        }
+    }
+
+    function restartAnimations(nextSlide) {
+        var animatedElements = $('[data-slick-index=' + nextSlide + ']').find('.animated');
+        $(animatedElements).removeClass('animated').width();
+
+        $(animatedElements).addClass('animated');
+    }
+</script>
+
